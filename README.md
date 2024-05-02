@@ -1,4 +1,4 @@
-Trabalho referente a criação de sistema para a nota da P2
+Trabalho referente a criação de sistema para a nota da P2, disciplina de Programação Desktop.
 
 ------------
 
@@ -8,6 +8,10 @@ Membros:
     Luca Mussi Just 802.569
 
 Projeto no Trello: [Projeto P2](https://trello.com/b/sqqx2xTt/trabalho-p2 "Projeto P2")
+
+Professor:
+
+- André Martins 
 
 ------------
 
