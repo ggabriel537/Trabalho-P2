@@ -4,6 +4,7 @@ Trabalho referente a criação de sistema para a nota da P2
 Membros:
  - José Carlos Gabriel Cirele Guimarães 802.417
  - Luca Mussi Just 802.569
+
 Projeto no Trello: https://trello.com/b/sqqx2xTt/trabalho-p2
 
 Sistema de Gestão para uma Clínica Odontológica - SIGCO
