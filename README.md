@@ -10,11 +10,8 @@ Projeto no Trello: https://trello.com/b/sqqx2xTt/trabalho-p2
 Responsaveis pela documentação do projeto e criação do mesmo:
 
     Beatriz Esteves Gonçalves - 802.474
-
     Felipe Braga Valota Esteves- 802.400
-
     Fernanda Lima Avanço - 802.393
-
     Jorge Miguel Lima Palhano - 802.420
 
     Professor: Antônio Pires
