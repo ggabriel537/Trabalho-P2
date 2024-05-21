@@ -11,8 +11,8 @@ public class Prontuario {
     @JoinColumn(name = "pacienteID")
     private Paciente paciente;
 
-    @ManyToOne
-    @JoinColumn(name = )
+    @OneToMany(mappedBy = "consulta")
+    @JoinColumn(name = "consultaID")
     private List<Consulta> historico;
 
     public Paciente getPaciente() {

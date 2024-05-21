@@ -7,11 +7,11 @@ public class Consulta {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    @OneToMany
+    @OneToOne
     @JoinColumn(name = "pacienteID")
     private Paciente paciente;
 
-    @OneToMany
+    @OneToOne
     @JoinColumn(name = "dentistaID")
     private Dentista dentista;
 
