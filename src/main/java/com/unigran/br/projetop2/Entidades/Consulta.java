@@ -2,8 +2,6 @@ package com.unigran.br.projetop2.Entidades;
 
 import java.io.File;
 
-import java.io.File;
-
 public class Consulta {
     private Paciente paciente;
     private Dentista dentista;
