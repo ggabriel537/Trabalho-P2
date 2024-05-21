@@ -1,9 +1,18 @@
-package com.unigran.br.projetop2.Entidades;
+package com.unigran.br.clinica.Entidades;
 
+import javax.persistence.*;
 import java.util.List;
 
-public class Prontuário {
+public class Prontuario {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
+    @ManyToOne
+    @JoinColumn(name = "pacienteID")
     private Paciente paciente;
+
+    @ManyToOne
+    @JoinColumn(name = )
     private List<Consulta> historico;
 
     public Paciente getPaciente() {

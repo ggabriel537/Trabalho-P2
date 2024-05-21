@@ -21,6 +21,6 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>21</maven.compiler.source>
         <maven.compiler.target>21</maven.compiler.target>
-        <exec.mainClass>com.unigran.br.projetop2.ProjetoP2</exec.mainClass>
+        <exec.mainClass>com.unigran.br.clinica.ProjetoP2</exec.mainClass>
     </properties>
 </project>

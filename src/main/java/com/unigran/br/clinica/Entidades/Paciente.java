@@ -1,14 +1,26 @@
-package com.unigran.br.projetop2.Entidades;
+package com.unigran.br.clinica.Entidades;
 
+import javax.persistence.*;
 import java.util.Date;
 
+@Entity
 public class Paciente {
+    @Column(length = 32, name = "nome")
     private String nome;
+    @Id
+    @Column(length = 11, name = "cpf")
     private String cpf;
+    @Temporal(TemporalType.DATE)
+    @Column(name = "nascimento")
     private Date nascimento;
+    @Column(length = 64, name = "endereco")
     private String endereco;
+    @Column(length = 64, name = "convenio")
     private String convenio;
+    @OneToOne
+    @Column(name = "contatoID")
     private Contato contato;
+    @Column(length = 32, name = "responsavel")
     private String responsavel;
 
     public String getNome() {

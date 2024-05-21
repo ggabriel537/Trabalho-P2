@@ -1,10 +1,21 @@
-package com.unigran.br.projetop2.Entidades;
+package com.unigran.br.clinica.Entidades;
 
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 import java.util.Date;
 
 public class Agendamento {
+    @OneToMany
+    @JoinColumn(name = "pacienteID")
     private Paciente paciente;
+
+    @OneToMany
+    @JoinColumn(name = "dentistaID")
     private Dentista dentista;
+
+    @Temporal(TemporalType.DATE)
     private Date data;
 
     public Paciente getPaciente() {

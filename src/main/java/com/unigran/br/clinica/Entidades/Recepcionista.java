@@ -1,7 +1,15 @@
-package com.unigran.br.projetop2.Entidades;
+package com.unigran.br.clinica.Entidades;
+
+import javax.persistence.*;
 
 public class Recepcionista {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
+    @Column(length = 32, name = "nome")
     private String nome;
+    @OneToOne
+    @JoinColumn(name = "loginID")
     private Login login;
 
     public String getNome() {
