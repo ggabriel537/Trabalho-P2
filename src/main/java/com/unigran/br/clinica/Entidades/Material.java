@@ -1,8 +1,19 @@
-package com.unigran.br.projetop2.Entidades;
+package com.unigran.br.clinica.Entidades;
 
+import javax.persistence.*;
+
+@Entity
 public class Material {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
+    @Column(length = 32, name = "nome")
     private String nome;
+
+    @Column(name = "quantidade")
     private int quantidade;
+
+    @Column(name = "minimo")
     private int minimo;
 
     public String getNome() {

@@ -1,7 +1,16 @@
-package com.unigran.br.projetop2.Entidades;
+package com.unigran.br.clinica.Entidades;
 
+import javax.persistence.*;
+
+@Entity
 public class Login {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
+    @Column(length = 16, name = "user")
     private String user;
+
+    @Column(length = 16, name = "senha")
     private String senha;
 
     public String getUser() {

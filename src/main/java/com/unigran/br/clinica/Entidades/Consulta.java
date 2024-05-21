@@ -1,12 +1,26 @@
-package com.unigran.br.projetop2.Entidades;
+package com.unigran.br.clinica.Entidades;
 
-import java.io.File;
+import javax.persistence.*;
 
+@Entity
 public class Consulta {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
+    @OneToOne
+    @JoinColumn(name = "pacienteID")
     private Paciente paciente;
+
+    @OneToOne
+    @JoinColumn(name = "dentistaID")
     private Dentista dentista;
+
+    @Column(length = 512, name = "observacoes")
     private String observacoes;
-    private File anexos;
+    @Column(length = 512)
+    private String anexos; //Alterado para String pois iremos armazenar apenas o local onde está o arquivo no banco
+
+    @Column(name = "valor")
     private double valor;
 
     public Paciente getPaciente() {
@@ -33,11 +47,11 @@ public class Consulta {
         this.observacoes = observacoes;
     }
 
-    public File getAnexos() {
+    public String getAnexos() {
         return anexos;
     }
 
-    public void setAnexos(File anexos) {
+    public void setAnexos(String anexos) {
         this.anexos = anexos;
     }
 

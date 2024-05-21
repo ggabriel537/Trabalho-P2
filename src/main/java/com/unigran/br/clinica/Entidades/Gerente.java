@@ -1,17 +1,17 @@
-package com.unigran.br.projetop2.Entidades;
+package com.unigran.br.clinica.Entidades;
 
-public class Dentista {
-    private int cro;
+import javax.persistence.*;
+
+@Entity
+public class Gerente {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
+    @Column(length = 32, name = "nome")
     private String nome;
+    @OneToOne
+    @JoinColumn(name = "loginID")
     private Login login;
-
-    public int getCro() {
-        return cro;
-    }
-
-    public void setCro(int cro) {
-        this.cro = cro;
-    }
 
     public String getNome() {
         return nome;
