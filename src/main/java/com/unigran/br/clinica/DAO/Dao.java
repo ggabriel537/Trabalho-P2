@@ -6,18 +6,18 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 
-public class Operacoes {
-    EntityManagerFactory emf = Persistence.createEntityManagerFactory("com.unigran.br_clinica_jar_1.0-SNAPSHOTPU");
-    EntityManager em = emf.createEntityManager();
-    EntityTransaction etx = em.getTransaction();
+public class Dao {
+    private static EntityManagerFactory emf = Persistence.createEntityManagerFactory("com.unigran.br_clinica_jar_1.0-SNAPSHOTPU");
+    private static EntityManager em = emf.createEntityManager();
+    private static EntityTransaction etx = em.getTransaction();
 
-    public void salvar(Object o) {
+    public static void salvar(Object o) {
         etx.begin();
         em.persist(o);
         etx.commit();
     }
 
-    public void atualiza(Object o, Object old) {
+    public static void atualiza(Object o, Object old) {
         if (!em.contains(old)) {
             old = em.merge(old);
         }
@@ -27,7 +27,7 @@ public class Operacoes {
         etx.commit();
     }
 
-    public void remove(Object o) {
+    public static void remove(Object o) {
         if (!em.contains(o)) {
             o = em.merge(o);
         }
@@ -36,13 +36,7 @@ public class Operacoes {
         etx.commit();
     }
 
-    public List listar() {
-        return null;
-    }
-
-    public Object get(int esc)
-    {
-        List objetos = listar();
-        return objetos.get(esc);
+    public static List listar(String query, Class c) {
+        return em.createNativeQuery(query, c).getResultList();
     }
 }
