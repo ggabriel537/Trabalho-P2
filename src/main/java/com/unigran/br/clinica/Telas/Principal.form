@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="com.unigran.br.clinica.Telas.Principal">
+  <grid id="27dc6" binding="PainelPrincipal" layout-manager="BorderLayout" hgap="0" vgap="0">
+    <constraints>
+      <xy x="20" y="20" width="500" height="400"/>
+    </constraints>
+    <properties/>
+    <border type="none"/>
+    <children>
+      <grid id="96cd9" binding="Labels" layout-manager="BorderLayout" hgap="0" vgap="0">
+        <constraints border-constraint="North"/>
+        <properties/>
+        <border type="none"/>
+        <children>
+          <component id="997f6" class="javax.swing.JLabel" binding="PrincipalL">
+            <constraints border-constraint="Center"/>
+            <properties>
+              <horizontalAlignment value="0"/>
+              <text value="Navegação"/>
+            </properties>
+          </component>
+        </children>
+      </grid>
+      <grid id="77775" binding="Botoes" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="1">
+        <constraints border-constraint="Center"/>
+        <properties/>
+        <border type="none"/>
+        <children>
+          <component id="d0e62" class="javax.swing.JButton" binding="GerenciarFuncionario">
+            <constraints/>
+            <properties>
+              <text value="Gerenciar Funcionário"/>
+            </properties>
+          </component>
+          <component id="1da1e" class="javax.swing.JButton" binding="GerenciarMaterial">
+            <constraints/>
+            <properties>
+              <text value="Gerenciar Material"/>
+            </properties>
+          </component>
+        </children>
+      </grid>
+      <grid id="9645c" binding="Opcoes" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="1">
+        <constraints border-constraint="South"/>
+        <properties/>
+        <border type="none"/>
+        <children>
+          <component id="f4ed3" class="javax.swing.JButton" binding="Sair">
+            <constraints/>
+            <properties>
+              <text value="Sair"/>
+            </properties>
+          </component>
+        </children>
+      </grid>
+    </children>
+  </grid>
+</form>

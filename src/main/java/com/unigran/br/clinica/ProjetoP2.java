@@ -4,6 +4,8 @@
 
 package com.unigran.br.clinica;
 
+import com.unigran.br.clinica.Telas.Principal;
+
 /**
  *
  * @author gabriel.guimaraes
@@ -12,7 +14,6 @@ public class ProjetoP2 {
 
     public static void main(String[] args) {
 
-        System.out.println("Hello World!!");
-
+        new Principal(5);
     }
 }

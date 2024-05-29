@@ -3,7 +3,7 @@ package com.unigran.br.clinica.Telas;
 import javax.swing.*;
 
 public class Login {
-    private JPanel panel1;
+    private JPanel PainelPrincipal;
     private JPanel Labels;
     private JPanel Campos;
     private JPanel Botoes;
@@ -14,9 +14,9 @@ public class Login {
     private JButton Confirmar;
     private JButton Sair;
 
-    public static void main(String[] args) {
+    public Login() {
         JFrame f = new JFrame("Login");
-        f.setContentPane(new Login().panel1);
+        f.setContentPane(new Login().PainelPrincipal);
         f.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         f.pack();
         f.setVisible(true);

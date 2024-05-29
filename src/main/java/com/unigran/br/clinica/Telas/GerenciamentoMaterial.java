@@ -2,7 +2,7 @@ package com.unigran.br.clinica.Telas;
 
 import javax.swing.*;
 
-public class CadastroMaterial {
+public class GerenciamentoMaterial {
     private JPanel PainelPrincipal;
     private JPanel Labels;
     private JPanel Campos;
@@ -17,9 +17,9 @@ public class CadastroMaterial {
     private JLabel QuantidadeL;
     private JLabel MinimoL;
 
-    public static void main(String[] args) {
+    public GerenciamentoMaterial() {
         JFrame f = new JFrame("Cadastro Material");
-        f.setContentPane(new CadastroMaterial().PainelPrincipal);
+        f.setContentPane(new GerenciamentoMaterial().PainelPrincipal);
         f.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
         f.pack();
         f.setVisible(true);
