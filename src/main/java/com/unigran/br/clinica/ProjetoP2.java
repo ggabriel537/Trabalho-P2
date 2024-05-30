@@ -4,7 +4,9 @@
 
 package com.unigran.br.clinica;
 
+import com.unigran.br.clinica.Telas.PesquisaProntuario;
 import com.unigran.br.clinica.Telas.Principal;
+import com.unigran.br.clinica.Telas.ProntuarioTela;
 
 /**
  *
@@ -14,6 +16,6 @@ public class ProjetoP2 {
 
     public static void main(String[] args) {
 
-        new Principal(5);
+        new ProntuarioTela(null);
     }
 }

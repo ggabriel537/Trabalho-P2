@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="com.unigran.br.clinica.Telas.ProntuarioTela">
+  <grid id="27dc6" binding="PainelPrincipal" layout-manager="BorderLayout" hgap="0" vgap="0">
+    <constraints>
+      <xy x="20" y="20" width="500" height="400"/>
+    </constraints>
+    <properties/>
+    <border type="none"/>
+    <children>
+      <grid id="1e956" binding="Labels" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="1">
+        <constraints border-constraint="North"/>
+        <properties/>
+        <border type="none"/>
+        <children>
+          <component id="f4644" class="javax.swing.JLabel" binding="ProntuarioL">
+            <constraints/>
+            <properties>
+              <horizontalAlignment value="0"/>
+              <text value="Prontuario do Paciente"/>
+            </properties>
+          </component>
+        </children>
+      </grid>
+      <grid id="40cdb" binding="Botoes" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="1">
+        <constraints border-constraint="South"/>
+        <properties/>
+        <border type="none"/>
+        <children>
+          <component id="237dd" class="javax.swing.JButton" binding="Selecionar">
+            <constraints/>
+            <properties>
+              <text value="Selecionar Consulta"/>
+            </properties>
+          </component>
+          <component id="55120" class="javax.swing.JButton" binding="Sair">
+            <constraints/>
+            <properties>
+              <text value="Sair"/>
+            </properties>
+          </component>
+        </children>
+      </grid>
+      <grid id="aeb07" binding="Campos" layout-manager="GridBagLayout">
+        <constraints border-constraint="Center"/>
+        <properties/>
+        <border type="none"/>
+        <children>
+          <scrollpane id="5e850" binding="Scroll">
+            <constraints>
+              <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+              <gridbag weightx="0.0" weighty="0.0"/>
+            </constraints>
+            <properties/>
+            <border type="none"/>
+            <children>
+              <component id="9ca0d" class="javax.swing.JTable" binding="Dados">
+                <constraints/>
+                <properties>
+                  <preferredScrollableViewportSize width="320" height="240"/>
+                </properties>
+              </component>
+            </children>
+          </scrollpane>
+          <vspacer id="6fee6">
+            <constraints>
+              <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+              <gridbag weightx="0.0" weighty="0.0"/>
+            </constraints>
+          </vspacer>
+          <vspacer id="a7192">
+            <constraints>
+              <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+              <gridbag weightx="0.0" weighty="0.0"/>
+            </constraints>
+          </vspacer>
+          <hspacer id="91c58">
+            <constraints>
+              <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+              <gridbag weightx="0.0" weighty="0.0"/>
+            </constraints>
+          </hspacer>
+          <hspacer id="4b7fc">
+            <constraints>
+              <grid row="1" column="2" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+              <gridbag weightx="0.0" weighty="0.0"/>
+            </constraints>
+          </hspacer>
+        </children>
+      </grid>
+    </children>
+  </grid>
+</form>

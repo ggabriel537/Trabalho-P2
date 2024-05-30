@@ -21,7 +21,7 @@ public class GerenciamentoFuncionario {
 
     public GerenciamentoFuncionario() {
         JFrame f = new JFrame("Cadastro Funcionário");
-        f.setContentPane(new GerenciamentoFuncionario().PainelPrincipal);
+        f.setContentPane(PainelPrincipal);
         f.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         f.pack();
         f.setVisible(true);

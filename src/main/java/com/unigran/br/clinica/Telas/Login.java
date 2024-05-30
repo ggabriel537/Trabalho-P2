@@ -16,7 +16,7 @@ public class Login {
 
     public Login() {
         JFrame f = new JFrame("Login");
-        f.setContentPane(new Login().PainelPrincipal);
+        f.setContentPane(PainelPrincipal);
         f.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         f.pack();
         f.setVisible(true);
