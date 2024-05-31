@@ -12,4 +12,12 @@ public class PesquisaPaciente {
     private JButton Sair;
     private JScrollPane scroll;
     private JTable Pacientes;
+
+    public PesquisaPaciente() {
+        JFrame f = new JFrame("Pesquisa de Paciente");
+        f.setContentPane(PainelPrincipal);
+        f.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        f.pack();
+        f.setVisible(true);
+    }
 }

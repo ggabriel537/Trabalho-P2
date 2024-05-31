@@ -28,4 +28,12 @@ public class EdicaoPaciente {
     private JLabel Con1L;
     private JLabel Con2L;
     private JLabel ResponsavelL;
+
+    public EdicaoPaciente() {
+        JFrame f = new JFrame("Edição de Paciente");
+        f.setContentPane(PainelPrincipal);
+        f.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        f.pack();
+        f.setVisible(true);
+    }
 }

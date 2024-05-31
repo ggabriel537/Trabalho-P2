@@ -12,4 +12,12 @@ public class SelecaoFuncionario {
     private JButton Sair;
     private JScrollPane scroll;
     private JTable Funcionarios;
+
+    public SelecaoFuncionario() {
+        JFrame f = new JFrame("Seleção de Funcionário");
+        f.setContentPane(PainelPrincipal);
+        f.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        f.pack();
+        f.setVisible(true);
+    }
 }

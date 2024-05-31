@@ -20,7 +20,7 @@ public class CadastroFuncionario {
     private JLabel PermissaoL;
 
     public CadastroFuncionario() {
-        JFrame f = new JFrame("Cadastro Funcionário");
+        JFrame f = new JFrame("Cadastro de Funcionário");
         f.setContentPane(PainelPrincipal);
         f.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         f.pack();

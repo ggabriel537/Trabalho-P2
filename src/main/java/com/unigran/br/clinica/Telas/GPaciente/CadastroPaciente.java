@@ -14,7 +14,6 @@ public class CadastroPaciente {
     private JTextField Nome;
     private JPanel CalendarioP;
     private JTextField Endereco;
-    private JTextArea Convenio;
     private JTextField Email;
     private JTextField Con1;
     private JTextField Con2;
@@ -28,4 +27,13 @@ public class CadastroPaciente {
     private JLabel Con1L;
     private JLabel Con2L;
     private JLabel ResponsavelL;
+    private JTextField Convenio;
+
+    public CadastroPaciente() {
+        JFrame f = new JFrame("Cadastro Paciente");
+        f.setContentPane(PainelPrincipal);
+        f.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        f.pack();
+        f.setVisible(true);
+    }
 }

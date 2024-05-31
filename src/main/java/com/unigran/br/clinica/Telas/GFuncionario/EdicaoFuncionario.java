@@ -18,4 +18,12 @@ public class EdicaoFuncionario {
     private JLabel UserL;
     private JLabel SenhaL;
     private JLabel PermissaoL;
+
+    public EdicaoFuncionario() {
+        JFrame f = new JFrame("Edição de Funcionário");
+        f.setContentPane(PainelPrincipal);
+        f.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        f.pack();
+        f.setVisible(true);
+    }
 }
