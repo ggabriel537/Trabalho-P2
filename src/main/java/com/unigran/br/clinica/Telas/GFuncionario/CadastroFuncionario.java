@@ -1,8 +1,8 @@
-package com.unigran.br.clinica.Telas;
+package com.unigran.br.clinica.Telas.GFuncionario;
 
 import javax.swing.*;
 
-public class GerenciamentoFuncionario {
+public class CadastroFuncionario {
     private JPanel PainelPrincipal;
     private JPanel Labels;
     private JPanel Campos;
@@ -19,7 +19,7 @@ public class GerenciamentoFuncionario {
     private JLabel SenhaL;
     private JLabel PermissaoL;
 
-    public GerenciamentoFuncionario() {
+    public CadastroFuncionario() {
         JFrame f = new JFrame("Cadastro Funcionário");
         f.setContentPane(PainelPrincipal);
         f.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);

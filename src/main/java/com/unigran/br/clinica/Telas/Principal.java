@@ -1,5 +1,6 @@
 package com.unigran.br.clinica.Telas;
 
+import com.unigran.br.clinica.Telas.GFuncionario.CadastroFuncionario;
 import com.unigran.br.clinica.Telas.GMaterial.CadastroMaterial;
 
 import javax.swing.*;
@@ -78,7 +79,7 @@ public class Principal {
 
         //Telas já criadas
         GerenciarFuncionario.addActionListener(e -> {
-            new GerenciamentoFuncionario();
+            new CadastroFuncionario();
         });
 
         GerenciarMaterial.addActionListener(e -> {
