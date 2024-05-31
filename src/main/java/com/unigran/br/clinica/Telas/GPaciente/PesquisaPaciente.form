@@ -12,7 +12,7 @@
         <properties/>
         <border type="none"/>
         <children>
-          <component id="82f05" class="javax.swing.JTextArea" binding="PesquisaL">
+          <component id="7314a" class="javax.swing.JLabel" binding="PacienteL">
             <constraints/>
             <properties>
               <text value="Pesquisa de Paciente"/>

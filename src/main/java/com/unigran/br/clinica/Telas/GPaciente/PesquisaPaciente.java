@@ -7,11 +7,11 @@ public class PesquisaPaciente {
     private JPanel Labels;
     private JPanel Botoes;
     private JPanel Campos;
-    private JTextArea PesquisaL;
     private JButton Confirmar;
     private JButton Sair;
     private JScrollPane scroll;
     private JTable Pacientes;
+    private JLabel PacienteL;
 
     public PesquisaPaciente() {
         JFrame f = new JFrame("Pesquisa de Paciente");

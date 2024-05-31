@@ -14,6 +14,8 @@ import com.unigran.br.clinica.Telas.GPaciente.EdicaoPaciente;
 import com.unigran.br.clinica.Telas.GPaciente.PesquisaPaciente;
 import com.unigran.br.clinica.Telas.GProntuario.PesquisaProntuario;
 import com.unigran.br.clinica.Telas.GProntuario.ProntuarioTela;
+import com.unigran.br.clinica.Telas.Login;
+import com.unigran.br.clinica.Telas.Principal;
 
 /**
  *
@@ -37,5 +39,8 @@ public class ProjetoP2 {
 
         new ProntuarioTela(null);
         new PesquisaProntuario();
+
+        new Login();
+        new Principal(4);
     }
 }

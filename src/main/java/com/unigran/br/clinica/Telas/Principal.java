@@ -43,25 +43,28 @@ public class Principal {
         {
             case 1:
             {
-
+                break;
             }
             case 2:
             {
-
+                break;
             }
             case 3:
             {
                 GerenciarMaterial.setVisible(true);
+                break;
             }
             case 4:
             {
                 GerenciarMaterial.setVisible(true);
                 GerenciarFuncionario.setVisible(true);
+                break;
             }
             default:
             {
                 JOptionPane.showMessageDialog(null, "Erro ao atribuir permissão!\nContate o administrador do sistema.");
                 System.exit(0);
+                break;
             }
         }
     }
