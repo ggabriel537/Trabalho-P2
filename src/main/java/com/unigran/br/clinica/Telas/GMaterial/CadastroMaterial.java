@@ -1,8 +1,8 @@
-package com.unigran.br.clinica.Telas;
+package com.unigran.br.clinica.Telas.GMaterial;
 
 import javax.swing.*;
 
-public class GerenciamentoMaterial {
+public class CadastroMaterial {
     private JPanel PainelPrincipal;
     private JPanel Labels;
     private JPanel Campos;
@@ -17,7 +17,7 @@ public class GerenciamentoMaterial {
     private JLabel QuantidadeL;
     private JLabel MinimoL;
 
-    public GerenciamentoMaterial() {
+    public CadastroMaterial() {
         JFrame f = new JFrame("Cadastro Material");
         f.setContentPane(PainelPrincipal);
         f.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);

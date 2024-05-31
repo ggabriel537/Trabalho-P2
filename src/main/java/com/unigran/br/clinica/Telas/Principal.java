@@ -1,8 +1,8 @@
 package com.unigran.br.clinica.Telas;
 
+import com.unigran.br.clinica.Telas.GMaterial.CadastroMaterial;
+
 import javax.swing.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 public class Principal {
     private JPanel PainelPrincipal;
@@ -13,6 +13,9 @@ public class Principal {
     private JButton GerenciarMaterial;
     private JPanel Opcoes;
     private JButton Sair;
+    private JButton Prontuarios;
+    private JButton GerenciamentoConsulta;
+    private JButton GerenciamentoPaciente;
     private int perm;
 
     public Principal(int perm)//Utilize agora construtor para criar as telas, nao vamos mais usar o metodo main
@@ -79,7 +82,7 @@ public class Principal {
         });
 
         GerenciarMaterial.addActionListener(e -> {
-            new GerenciamentoMaterial();
+            new CadastroMaterial();
         });
     }
 }
