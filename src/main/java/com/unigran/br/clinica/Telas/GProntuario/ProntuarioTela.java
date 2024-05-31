@@ -1,4 +1,4 @@
-package com.unigran.br.clinica.Telas;
+package com.unigran.br.clinica.Telas.GProntuario;
 
 import com.unigran.br.clinica.Entidades.Prontuario;
 

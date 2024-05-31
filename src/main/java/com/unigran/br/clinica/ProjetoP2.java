@@ -4,9 +4,7 @@
 
 package com.unigran.br.clinica;
 
-import com.unigran.br.clinica.Telas.PesquisaProntuario;
-import com.unigran.br.clinica.Telas.Principal;
-import com.unigran.br.clinica.Telas.ProntuarioTela;
+import com.unigran.br.clinica.Telas.GProntuario.ProntuarioTela;
 
 /**
  *
