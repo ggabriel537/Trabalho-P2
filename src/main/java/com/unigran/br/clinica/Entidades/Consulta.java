@@ -1,12 +1,16 @@
 package com.unigran.br.clinica.Entidades;
 
 import javax.persistence.*;
+import java.util.Date;
 
 @Entity
 public class Consulta {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+
+    @Column(name = "status")
+    private int status;
     @OneToOne
     @JoinColumn(name = "pacienteID")
     private Paciente paciente;
@@ -17,11 +21,23 @@ public class Consulta {
 
     @Column(length = 512, name = "observacoes")
     private String observacoes;
+
+    @Column(name = "data")
+    @Temporal(TemporalType.DATE)
+    private Date dataconsulta;
     @Column(length = 512)
     private String anexos; //Alterado para String pois iremos armazenar apenas o local onde está o arquivo no banco
 
     @Column(name = "valor")
     private double valor;
+
+    public int getStatus() {
+        return status;
+    }
+
+    public void setStatus(int status) {
+        this.status = status;
+    }
 
     public Paciente getPaciente() {
         return paciente;
@@ -61,5 +77,13 @@ public class Consulta {
 
     public void setValor(double valor) {
         this.valor = valor;
+    }
+
+    public Date getDataconsulta() {
+        return dataconsulta;
+    }
+
+    public void setDataconsulta(Date dataconsulta) {
+        this.dataconsulta = dataconsulta;
     }
 }

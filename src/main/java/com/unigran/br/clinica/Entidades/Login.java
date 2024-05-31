@@ -13,6 +13,17 @@ public class Login {
     @Column(length = 16, name = "senha")
     private String senha;
 
+    @Column(name = "permissao")
+    private int perm;
+
+    public int getPerm() {
+        return perm;
+    }
+
+    public void setPerm(int perm) {
+        this.perm = perm;
+    }
+
     public String getUser() {
         return user;
     }

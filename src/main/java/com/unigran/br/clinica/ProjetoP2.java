@@ -4,6 +4,9 @@
 
 package com.unigran.br.clinica;
 
+import com.unigran.br.clinica.Telas.GConsulta.CadastroConsulta;
+import com.unigran.br.clinica.Telas.Principal;
+
 /**
  *
  * @author gabriel.guimaraes
@@ -11,6 +14,7 @@ package com.unigran.br.clinica;
 public class ProjetoP2 {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!!");
+        new CadastroConsulta();
+
     }
 }
