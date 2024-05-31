@@ -15,4 +15,5 @@ public class EdicaoMaterial {
     private JTextArea Minimo;
     private JLabel QuantidadeL;
     private JLabel MinimoL;
+    private JTextField Material;
 }

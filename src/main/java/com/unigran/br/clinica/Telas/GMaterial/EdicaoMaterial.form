@@ -45,15 +45,6 @@
         <properties/>
         <border type="none"/>
         <children>
-          <component id="40fd" class="javax.swing.JLabel" binding="EdicaoL">
-            <constraints>
-              <grid row="1" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
-              <gridbag weightx="0.0" weighty="0.0"/>
-            </constraints>
-            <properties>
-              <text value="Material Editado:"/>
-            </properties>
-          </component>
           <component id="54cc0" class="javax.swing.JTextArea" binding="Quantidade">
             <constraints>
               <grid row="3" column="3" row-span="1" col-span="1" vsize-policy="6" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false">
@@ -136,6 +127,27 @@
               <gridbag weightx="0.0" weighty="0.0"/>
             </constraints>
           </hspacer>
+          <component id="40fd" class="javax.swing.JLabel" binding="EdicaoL">
+            <constraints>
+              <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+              <gridbag weightx="0.0" weighty="0.0"/>
+            </constraints>
+            <properties>
+              <text value="Material"/>
+            </properties>
+          </component>
+          <component id="efa70" class="javax.swing.JTextField" binding="Material">
+            <constraints>
+              <grid row="1" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                <preferred-size width="150" height="-1"/>
+              </grid>
+              <gridbag weightx="0.0" weighty="0.0"/>
+            </constraints>
+            <properties>
+              <columns value="16"/>
+              <editable value="false"/>
+            </properties>
+          </component>
         </children>
       </grid>
     </children>
