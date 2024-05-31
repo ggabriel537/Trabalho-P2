@@ -151,17 +151,6 @@
               <text value="Valor"/>
             </properties>
           </component>
-          <component id="3d59b" class="javax.swing.JTextField" binding="Valor">
-            <constraints>
-              <grid row="11" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
-                <preferred-size width="150" height="-1"/>
-              </grid>
-              <gridbag weightx="0.0" weighty="0.0"/>
-            </constraints>
-            <properties>
-              <columns value="8"/>
-            </properties>
-          </component>
           <component id="233ac" class="javax.swing.JLabel" binding="AnexoL">
             <constraints>
               <grid row="9" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
@@ -200,7 +189,7 @@
                 <constraints/>
                 <properties>
                   <columns value="32"/>
-                  <rows value="2"/>
+                  <rows value="4"/>
                 </properties>
               </component>
             </children>
@@ -259,6 +248,17 @@
             <border type="none"/>
             <children/>
           </grid>
+          <component id="ede04" class="javax.swing.JFormattedTextField" binding="Valor">
+            <constraints>
+              <grid row="11" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                <preferred-size width="150" height="-1"/>
+              </grid>
+              <gridbag weightx="0.0" weighty="0.0"/>
+            </constraints>
+            <properties>
+              <columns value="8"/>
+            </properties>
+          </component>
         </children>
       </grid>
     </children>

@@ -151,17 +151,6 @@
               <text value="Valor"/>
             </properties>
           </component>
-          <component id="3d59b" class="javax.swing.JTextField" binding="Valor">
-            <constraints>
-              <grid row="11" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
-                <preferred-size width="150" height="-1"/>
-              </grid>
-              <gridbag weightx="0.0" weighty="0.0"/>
-            </constraints>
-            <properties>
-              <columns value="8"/>
-            </properties>
-          </component>
           <component id="233ac" class="javax.swing.JLabel" binding="AnexoL">
             <constraints>
               <grid row="9" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
@@ -200,7 +189,7 @@
                 <constraints/>
                 <properties>
                   <columns value="32"/>
-                  <rows value="2"/>
+                  <rows value="4"/>
                 </properties>
               </component>
             </children>
@@ -229,15 +218,6 @@
               <gridbag weightx="0.0" weighty="0.0"/>
             </constraints>
           </vspacer>
-          <component id="b4835" class="javax.swing.JLabel" binding="DataL">
-            <constraints>
-              <grid row="3" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
-              <gridbag weightx="0.0" weighty="0.0"/>
-            </constraints>
-            <properties>
-              <text value="Data"/>
-            </properties>
-          </component>
           <vspacer id="64f66">
             <constraints>
               <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
@@ -250,7 +230,7 @@
               <gridbag weightx="0.0" weighty="0.0"/>
             </constraints>
           </vspacer>
-          <grid id="bedbd" binding="DataP" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="1">
+          <grid id="bedbd" binding="DataP" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="0">
             <constraints>
               <grid row="3" column="3" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
               <gridbag weightx="0.0" weighty="0.0"/>
@@ -259,6 +239,26 @@
             <border type="none"/>
             <children/>
           </grid>
+          <component id="b4835" class="javax.swing.JLabel" binding="DataL">
+            <constraints>
+              <grid row="3" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+              <gridbag weightx="0.0" weighty="0.0"/>
+            </constraints>
+            <properties>
+              <text value="Data"/>
+            </properties>
+          </component>
+          <component id="73294" class="javax.swing.JFormattedTextField" binding="Valor">
+            <constraints>
+              <grid row="11" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                <preferred-size width="150" height="-1"/>
+              </grid>
+              <gridbag weightx="0.0" weighty="0.0"/>
+            </constraints>
+            <properties>
+              <columns value="8"/>
+            </properties>
+          </component>
         </children>
       </grid>
     </children>

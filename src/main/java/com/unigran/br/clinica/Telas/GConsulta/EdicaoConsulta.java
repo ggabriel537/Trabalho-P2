@@ -1,6 +1,9 @@
 package com.unigran.br.clinica.Telas.GConsulta;
 
+import com.toedter.calendar.JDateChooser;
+
 import javax.swing.*;
+import java.awt.*;
 
 public class EdicaoConsulta {
     private JPanel PainelPrincipal;
@@ -18,7 +21,6 @@ public class EdicaoConsulta {
     private JTextField Dentista;
     private JLabel ObservacaoL;
     private JLabel ValorL;
-    private JTextField Valor;
     private JLabel AnexoL;
     private JTextArea Observacao;
     private JScrollPane scroll;
@@ -26,12 +28,18 @@ public class EdicaoConsulta {
     private JTextArea Anexos;
     private JLabel DataL;
     private JPanel DataP;
+    private JFormattedTextField Valor;
     private JFrame f;
+    private JDateChooser data;
 
     public EdicaoConsulta() {
         f = new JFrame("Edição de Consulta");
         f.setContentPane(PainelPrincipal);
         f.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
+        data = new JDateChooser();
+        data.setPreferredSize(new Dimension(130, 18));
+        DataP.add(data);
+        DataP.setVisible(true);
         f.pack();
         f.setVisible(true);
         acoes();
