@@ -1,7 +1,12 @@
 package com.unigran.br.clinica.Telas;
 
+import com.unigran.br.clinica.Telas.GConsulta.ConsultaPrincipal;
 import com.unigran.br.clinica.Telas.GFuncionario.CadastroFuncionario;
+import com.unigran.br.clinica.Telas.GFuncionario.FuncionarioPrincipal;
 import com.unigran.br.clinica.Telas.GMaterial.CadastroMaterial;
+import com.unigran.br.clinica.Telas.GMaterial.MaterialPrincipal;
+import com.unigran.br.clinica.Telas.GPaciente.PacientePrincipal;
+import com.unigran.br.clinica.Telas.GProntuario.PesquisaProntuario;
 
 import javax.swing.*;
 
@@ -29,6 +34,10 @@ public class Principal {
 
         GerenciarFuncionario.setVisible(false); //Sempre que criar um item novo deve adicionar um botão a essa página e digitar isso daqui
         GerenciarMaterial.setVisible(false);
+        GerenciamentoConsulta.setVisible(false);
+        GerenciamentoPaciente.setVisible(false);
+        Prontuarios.setVisible(false);
+        Sair.setVisible(true);
 
         aplicarPerm();
         acoes(); //Não mecher
@@ -37,20 +46,32 @@ public class Principal {
         f.pack(); //Não mecher
     }
 
+    /*
+    Permissões:
+        1 - Recepcionista
+        2 - Médico
+        3 - Gerente
+        4 - Admin
+    */
+
     public void aplicarPerm() //Irei colocar o sistema de permissões aqui, não mecher
     {
         switch (perm)
         {
             case 1:
             {
+                GerenciamentoConsulta.setVisible(true);
+                GerenciamentoPaciente.setVisible(true);
                 break;
             }
             case 2:
             {
+                Prontuarios.setVisible(true);
                 break;
             }
             case 3:
             {
+                GerenciarFuncionario.setVisible(true);
                 GerenciarMaterial.setVisible(true);
                 break;
             }
@@ -58,6 +79,9 @@ public class Principal {
             {
                 GerenciarMaterial.setVisible(true);
                 GerenciarFuncionario.setVisible(true);
+                GerenciamentoConsulta.setVisible(true);
+                GerenciamentoPaciente.setVisible(true);
+                Prontuarios.setVisible(true);
                 break;
             }
             default:
@@ -82,11 +106,22 @@ public class Principal {
 
         //Telas já criadas
         GerenciarFuncionario.addActionListener(e -> {
-            new CadastroFuncionario();
+            new FuncionarioPrincipal();
         });
-
         GerenciarMaterial.addActionListener(e -> {
-            new CadastroMaterial();
+            new MaterialPrincipal();
+        });
+        GerenciamentoPaciente.addActionListener(e -> {
+            new PacientePrincipal();
+        });
+        GerenciamentoConsulta.addActionListener(e -> {
+            new ConsultaPrincipal();
+        });
+        Prontuarios.addActionListener(e -> {
+            new PesquisaProntuario();
+        });
+        Sair.addActionListener(e -> {
+            System.exit(0);
         });
     }
 }

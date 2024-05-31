@@ -28,12 +28,21 @@ public class CadastroPaciente {
     private JLabel Con2L;
     private JLabel ResponsavelL;
     private JTextField Convenio;
+    private JFrame f;
 
     public CadastroPaciente() {
-        JFrame f = new JFrame("Cadastro Paciente");
+        f = new JFrame("Cadastro Paciente");
         f.setContentPane(PainelPrincipal);
-        f.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        f.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
         f.pack();
         f.setVisible(true);
+        acoes();
+    }
+
+    private void acoes()
+    {
+        Sair.addActionListener(e -> {
+            f.dispose();
+        });
     }
 }

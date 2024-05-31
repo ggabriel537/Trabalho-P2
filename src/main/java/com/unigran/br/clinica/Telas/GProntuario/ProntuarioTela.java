@@ -15,12 +15,21 @@ public class ProntuarioTela {
     private JButton Sair;
     private JButton Selecionar;
     private Prontuario p;
+    private JFrame f;
     public ProntuarioTela(Prontuario p) {
         this.p = p;
-        JFrame f = new JFrame("Prontuario do Paciente");
+        f = new JFrame("Prontuario do Paciente");
         f.setContentPane(PainelPrincipal);
         f.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
         f.pack();
         f.setVisible(true);
+        acoes();
+    }
+
+    private void acoes()
+    {
+        Sair.addActionListener(e -> {
+            f.dispose();
+        });
     }
 }

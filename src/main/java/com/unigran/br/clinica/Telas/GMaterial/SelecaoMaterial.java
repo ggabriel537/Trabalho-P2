@@ -12,12 +12,21 @@ public class SelecaoMaterial {
     private JButton Sair;
     private JScrollPane scroll;
     private JTable Materiais;
+    private JFrame f;
 
     public SelecaoMaterial() {
-        JFrame f = new JFrame("Seleção de Material");
+        f = new JFrame("Seleção de Material");
         f.setContentPane(PainelPrincipal);
-        f.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        f.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
         f.pack();
         f.setVisible(true);
+        acoes();
+    }
+
+    private void acoes()
+    {
+        Sair.addActionListener(e -> {
+            f.dispose();
+        });
     }
 }

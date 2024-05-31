@@ -18,12 +18,21 @@ public class CadastroFuncionario {
     private JLabel UsuarioL;
     private JLabel SenhaL;
     private JLabel PermissaoL;
+    private JFrame f;
 
     public CadastroFuncionario() {
-        JFrame f = new JFrame("Cadastro de Funcionário");
+        f = new JFrame("Cadastro de Funcionário");
         f.setContentPane(PainelPrincipal);
-        f.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        f.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
         f.pack();
         f.setVisible(true);
+        acoes();
+    }
+
+    private void acoes()
+    {
+        Sair.addActionListener(e -> {
+            f.dispose();
+        });
     }
 }

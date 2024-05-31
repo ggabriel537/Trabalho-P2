@@ -13,12 +13,21 @@ public class Login {
     private JLabel SenhaL;
     private JButton Confirmar;
     private JButton Sair;
+    private JFrame f;
 
     public Login() {
-        JFrame f = new JFrame("Login");
+        f = new JFrame("Login");
         f.setContentPane(PainelPrincipal);
         f.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         f.pack();
         f.setVisible(true);
+        acoes();
+    }
+
+    private void acoes()
+    {
+        Sair.addActionListener(e -> {
+            f.dispose();
+        });
     }
 }

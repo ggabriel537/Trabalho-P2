@@ -12,12 +12,21 @@ public class PesquisaPaciente {
     private JScrollPane scroll;
     private JTable Pacientes;
     private JLabel PacienteL;
+    private JFrame f;
 
     public PesquisaPaciente() {
-        JFrame f = new JFrame("Pesquisa de Paciente");
+        f = new JFrame("Pesquisa de Paciente");
         f.setContentPane(PainelPrincipal);
-        f.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        f.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
         f.pack();
         f.setVisible(true);
+        acoes();
+    }
+
+    private void acoes()
+    {
+        Sair.addActionListener(e -> {
+            f.dispose();
+        });
     }
 }

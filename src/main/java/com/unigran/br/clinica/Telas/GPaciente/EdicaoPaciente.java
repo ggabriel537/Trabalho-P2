@@ -28,12 +28,21 @@ public class EdicaoPaciente {
     private JLabel Con1L;
     private JLabel Con2L;
     private JLabel ResponsavelL;
+    private JFrame f;
 
     public EdicaoPaciente() {
-        JFrame f = new JFrame("Edição de Paciente");
+        f = new JFrame("Edição de Paciente");
         f.setContentPane(PainelPrincipal);
-        f.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        f.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
         f.pack();
         f.setVisible(true);
+        acoes();
+    }
+
+    private void acoes()
+    {
+        Sair.addActionListener(e -> {
+            f.dispose();
+        });
     }
 }

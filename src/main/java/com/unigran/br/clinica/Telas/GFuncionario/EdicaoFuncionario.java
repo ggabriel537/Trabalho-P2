@@ -18,12 +18,21 @@ public class EdicaoFuncionario {
     private JLabel UserL;
     private JLabel SenhaL;
     private JLabel PermissaoL;
+    private JFrame f;
 
     public EdicaoFuncionario() {
-        JFrame f = new JFrame("Edição de Funcionário");
+        f = new JFrame("Edição de Funcionário");
         f.setContentPane(PainelPrincipal);
-        f.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        f.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
         f.pack();
         f.setVisible(true);
+        acoes();
+    }
+
+    private void acoes()
+    {
+        Sair.addActionListener(e -> {
+            f.dispose();
+        });
     }
 }

@@ -16,12 +16,21 @@ public class CadastroMaterial {
     private JLabel NomeL;
     private JLabel QuantidadeL;
     private JLabel MinimoL;
+    private JFrame f;
 
     public CadastroMaterial() {
-        JFrame f = new JFrame("Cadastro Material");
+        f = new JFrame("Cadastro Material");
         f.setContentPane(PainelPrincipal);
         f.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
         f.pack();
         f.setVisible(true);
+        acoes();
+    }
+
+    private void acoes()
+    {
+        Sair.addActionListener(e -> {
+            f.dispose();
+        });
     }
 }

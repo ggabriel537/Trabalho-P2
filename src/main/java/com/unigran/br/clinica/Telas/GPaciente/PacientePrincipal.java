@@ -1,21 +1,20 @@
-package com.unigran.br.clinica.Telas.GFuncionario;
+package com.unigran.br.clinica.Telas.GPaciente;
 
 import javax.swing.*;
 
-public class SelecaoFuncionario {
+public class PacientePrincipal {
     private JPanel PainelPrincipal;
     private JPanel Labels;
     private JPanel Botoes;
     private JPanel Campos;
-    private JLabel SelecaoL;
-    private JButton Confirmar;
+    private JLabel PacienteL;
     private JButton Sair;
-    private JScrollPane scroll;
-    private JTable Funcionarios;
+    private JButton Cadastrar;
+    private JButton Editar;
     private JFrame f;
 
-    public SelecaoFuncionario() {
-        f = new JFrame("Seleção de Funcionário");
+    public PacientePrincipal() {
+        f = new JFrame("Menu Paciente");
         f.setContentPane(PainelPrincipal);
         f.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
         f.pack();
