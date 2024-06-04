@@ -3,6 +3,7 @@ package com.unigran.br.clinica.Telas.GProntuario;
 import com.unigran.br.clinica.Controller.PacienteC;
 import com.unigran.br.clinica.Controller.ProntuarioC;
 import com.unigran.br.clinica.Entidades.Prontuario;
+import com.unigran.br.clinica.Telas.GConsulta.EdicaoConsulta;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
@@ -67,6 +68,12 @@ public class ProntuarioTela {
     {
         Sair.addActionListener(e -> {
             f.dispose();
+        });
+        Selecionar.addActionListener(e -> {
+            if (Dados.getSelectedRow()!=-1)
+            {
+                new EdicaoConsulta();
+            }
         });
     }
 }

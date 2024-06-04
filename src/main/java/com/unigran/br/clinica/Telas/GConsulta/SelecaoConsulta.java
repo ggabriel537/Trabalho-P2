@@ -71,6 +71,8 @@ public class SelecaoConsulta {
                 if (Consultas.getSelectedRow()==-1)
                 {
                     JOptionPane.showMessageDialog(null, "Selecione um item!");
+                }else{
+                    new EdicaoConsulta(listaconsulta.get(Consultas.getSelectedRow()));
                 }
             });
         }
