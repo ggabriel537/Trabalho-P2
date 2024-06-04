@@ -1,10 +1,8 @@
 package com.unigran.br.clinica.Entidades;
 
-import javax.persistence.Column;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
+import javax.persistence.*;
 
+@Entity
 public class Dentista extends Funcionario {
     @Id
     @Column(name = "cro")

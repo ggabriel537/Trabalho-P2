@@ -18,7 +18,7 @@ public class Paciente {
     @Column(length = 64, name = "convenio")
     private String convenio;
     @OneToOne
-    @Column(name = "contatoID")
+    @JoinColumn(name = "contatoID")
     private Contato contato;
     @Column(length = 32, name = "responsavel")
     private String responsavel;
