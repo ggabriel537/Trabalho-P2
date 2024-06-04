@@ -13,8 +13,10 @@ public class SelecaoConsulta {
     private JScrollPane scroll;
     private JTable Consultas;
     private JFrame f;
+    private boolean chamarEditor;
 
-    public SelecaoConsulta() {
+    public SelecaoConsulta(boolean chamarEditor) {
+        this.chamarEditor = chamarEditor;
         f = new JFrame("Seleção de Consulta");
         f.setContentPane(PainelPrincipal);
         f.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);

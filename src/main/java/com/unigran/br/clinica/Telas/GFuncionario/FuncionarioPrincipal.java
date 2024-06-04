@@ -1,5 +1,8 @@
 package com.unigran.br.clinica.Telas.GFuncionario;
 
+import com.unigran.br.clinica.Telas.GConsulta.CadastroConsulta;
+import com.unigran.br.clinica.Telas.GConsulta.EdicaoConsulta;
+
 import javax.swing.*;
 
 public class FuncionarioPrincipal {
@@ -27,6 +30,12 @@ public class FuncionarioPrincipal {
     {
         Sair.addActionListener(e -> {
             f.dispose();
+        });
+        Cadastrar.addActionListener(e -> {
+            new CadastroFuncionario();
+        });
+        Editar.addActionListener(e -> {
+            new SelecaoFuncionario(true);
         });
     }
 }

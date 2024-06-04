@@ -13,8 +13,10 @@ public class SelecaoMaterial {
     private JScrollPane scroll;
     private JTable Materiais;
     private JFrame f;
+    private boolean chamarEditor;
 
-    public SelecaoMaterial() {
+    public SelecaoMaterial(boolean chamarEditor) {
+        this.chamarEditor = chamarEditor;
         f = new JFrame("Seleção de Material");
         f.setContentPane(PainelPrincipal);
         f.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);

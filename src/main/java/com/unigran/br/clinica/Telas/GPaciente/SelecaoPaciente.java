@@ -2,7 +2,7 @@ package com.unigran.br.clinica.Telas.GPaciente;
 
 import javax.swing.*;
 
-public class PesquisaPaciente {
+public class SelecaoPaciente {
     private JPanel PainelPrincipal;
     private JPanel Labels;
     private JPanel Botoes;
@@ -13,8 +13,10 @@ public class PesquisaPaciente {
     private JTable Pacientes;
     private JLabel PacienteL;
     private JFrame f;
+    private boolean chamarEditor;
 
-    public PesquisaPaciente() {
+    public SelecaoPaciente(boolean chamarEditor) {
+        this.chamarEditor = chamarEditor;
         f = new JFrame("Pesquisa de Paciente");
         f.setContentPane(PainelPrincipal);
         f.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);

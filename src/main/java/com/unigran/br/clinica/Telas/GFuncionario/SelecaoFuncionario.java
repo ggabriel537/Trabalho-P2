@@ -13,8 +13,10 @@ public class SelecaoFuncionario {
     private JScrollPane scroll;
     private JTable Funcionarios;
     private JFrame f;
+    private boolean chamarEditor;
 
-    public SelecaoFuncionario() {
+    public SelecaoFuncionario(boolean chamarEditor) {
+        this.chamarEditor = chamarEditor;
         f = new JFrame("Seleção de Funcionário");
         f.setContentPane(PainelPrincipal);
         f.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);

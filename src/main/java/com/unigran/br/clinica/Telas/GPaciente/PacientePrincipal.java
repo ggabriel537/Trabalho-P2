@@ -1,5 +1,8 @@
 package com.unigran.br.clinica.Telas.GPaciente;
 
+import com.unigran.br.clinica.Telas.GConsulta.CadastroConsulta;
+import com.unigran.br.clinica.Telas.GConsulta.SelecaoConsulta;
+
 import javax.swing.*;
 
 public class PacientePrincipal {
@@ -26,6 +29,12 @@ public class PacientePrincipal {
     {
         Sair.addActionListener(e -> {
             f.dispose();
+        });
+        Cadastrar.addActionListener(e -> {
+            new CadastroPaciente();
+        });
+        Editar.addActionListener(e -> {
+            new SelecaoPaciente(true);
         });
     }
 }

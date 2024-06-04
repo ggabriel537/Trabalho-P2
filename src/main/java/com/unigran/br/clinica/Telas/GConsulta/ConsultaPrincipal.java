@@ -27,5 +27,11 @@ public class ConsultaPrincipal {
         Sair.addActionListener(e -> {
             f.dispose();
         });
+        Cadastrar.addActionListener(e -> {
+            new CadastroConsulta();
+        });
+        Editar.addActionListener(e -> {
+            new SelecaoConsulta(true);
+        });
     }
 }
