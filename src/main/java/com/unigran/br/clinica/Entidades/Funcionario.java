@@ -3,7 +3,7 @@ package com.unigran.br.clinica.Entidades;
 import javax.persistence.*;
 
 @Entity
-public class Gerente {
+public class Funcionario {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
@@ -12,6 +12,17 @@ public class Gerente {
     @OneToOne
     @JoinColumn(name = "loginID")
     private Login login;
+
+    @Column(name = "permissao")
+    private int permissao;
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
     public String getNome() {
         return nome;
@@ -27,5 +38,13 @@ public class Gerente {
 
     public void setLogin(Login login) {
         this.login = login;
+    }
+
+    public int getPermissao() {
+        return permissao;
+    }
+
+    public void setPermissao(int permissao) {
+        this.permissao = permissao;
     }
 }

@@ -1,12 +1,10 @@
 package com.unigran.br.clinica.Telas;
 
 import com.unigran.br.clinica.Telas.GConsulta.ConsultaPrincipal;
-import com.unigran.br.clinica.Telas.GFuncionario.CadastroFuncionario;
 import com.unigran.br.clinica.Telas.GFuncionario.FuncionarioPrincipal;
-import com.unigran.br.clinica.Telas.GMaterial.CadastroMaterial;
 import com.unigran.br.clinica.Telas.GMaterial.MaterialPrincipal;
 import com.unigran.br.clinica.Telas.GPaciente.PacientePrincipal;
-import com.unigran.br.clinica.Telas.GProntuario.PesquisaProntuario;
+import com.unigran.br.clinica.Telas.GProntuario.SelecaoProntuario;
 
 import javax.swing.*;
 
@@ -118,7 +116,7 @@ public class Principal {
             new ConsultaPrincipal();
         });
         Prontuarios.addActionListener(e -> {
-            new PesquisaProntuario();
+            new SelecaoProntuario();
         });
         Sair.addActionListener(e -> {
             System.exit(0);

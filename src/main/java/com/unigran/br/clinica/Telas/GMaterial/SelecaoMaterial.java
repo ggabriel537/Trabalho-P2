@@ -1,6 +1,12 @@
 package com.unigran.br.clinica.Telas.GMaterial;
 
+import com.unigran.br.clinica.Controller.FuncionarioC;
+import com.unigran.br.clinica.Controller.MaterialC;
+import com.unigran.br.clinica.Entidades.Material;
+
 import javax.swing.*;
+import javax.swing.table.DefaultTableModel;
+import java.util.List;
 
 public class SelecaoMaterial {
     private JPanel PainelPrincipal;
@@ -14,6 +20,7 @@ public class SelecaoMaterial {
     private JTable Materiais;
     private JFrame f;
     private boolean chamarEditor;
+    private List<Material> listamaterial;
 
     public SelecaoMaterial(boolean chamarEditor) {
         this.chamarEditor = chamarEditor;
@@ -23,6 +30,18 @@ public class SelecaoMaterial {
         f.pack();
         f.setVisible(true);
         acoes();
+    }
+
+    public void atualizarMaterial(){
+        this.listamaterial = MaterialC.listar();
+        String[] colunas = new String[]{"Nome", "Quantidade"};
+        Object[][] data = new Object[listamaterial.size()][colunas.length];
+        for (int i = 0; i < listamaterial.size(); i++) {
+            data[i][0] = listamaterial.get(i).getNome();
+            data[i][1] = listamaterial.get(i).getQuantidade();
+        }
+        Materiais.setModel(new DefaultTableModel(data,colunas));
+        f.pack();
     }
 
     private void acoes()

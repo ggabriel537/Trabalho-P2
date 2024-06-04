@@ -1,30 +1,33 @@
-package com.unigran.br.clinica.Telas.GPaciente;
+package com.unigran.br.clinica.Telas.GProntuario;
 
 import com.unigran.br.clinica.Controller.MaterialC;
 import com.unigran.br.clinica.Controller.PacienteC;
+import com.unigran.br.clinica.Controller.ProntuarioC;
 import com.unigran.br.clinica.Entidades.Paciente;
+import com.unigran.br.clinica.Entidades.Prontuario;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.util.List;
 
-public class SelecaoPaciente {
+public class SelecaoProntuario {
     private JPanel PainelPrincipal;
     private JPanel Labels;
-    private JPanel Botoes;
     private JPanel Campos;
+    private JPanel Botoes;
+    private JTextField Paciente;
+    private JLabel PacienteL;
+    private JLabel ProntuarioL;
     private JButton Confirmar;
     private JButton Sair;
-    private JScrollPane scroll;
+    private JButton Filtrar;
+    private JScrollPane Scroll;
     private JTable Pacientes;
-    private JLabel PacienteL;
     private JFrame f;
-    private boolean chamarEditor;
     private List<Paciente> listapacientes;
 
-    public SelecaoPaciente(boolean chamarEditor) {
-        this.chamarEditor = chamarEditor;
-        f = new JFrame("Pesquisa de Paciente");
+    public SelecaoProntuario() {
+        f = new JFrame("Pesquisa de Prontuario");
         f.setContentPane(PainelPrincipal);
         f.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
         f.pack();
