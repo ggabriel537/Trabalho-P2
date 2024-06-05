@@ -45,10 +45,11 @@ public class CadastroFuncionario {
             cadastrar();
         });
         Permissoes.addActionListener(e -> {
-            if (Permissoes.getSelectedIndex()==2)
+            if (Permissoes.getSelectedIndex()==1)
             {
                 CRO.setEditable(true);
             }else{
+                CRO.setText("");
                 CRO.setEditable(false);
             }
         });
@@ -58,7 +59,7 @@ public class CadastroFuncionario {
     {
         boolean teste = false;
         String erros = "";
-        String cro;
+        int cro = 0;
         String nomeC = Nome.getText();
         String usuarioC = Usuario.getText();
         String senhaC = Senha.getText();
@@ -82,15 +83,16 @@ public class CadastroFuncionario {
         if (!CRO.getText().isEmpty())
         {
             try{
-                cro = CRO.getText();
+                cro = Integer.parseInt(CRO.getText());
             }catch (Exception e)
             {
+                teste = true;
                 erros += "Digite um número válido!\n";
             }
         }
         if(teste)
         {
-            JOptionPane.showMessageDialog(null, "Campos não preenchidos\n"+erros);
+            JOptionPane.showMessageDialog(null, "Campos com erros!\n"+erros);
         }else{
             Funcionario f = new Funcionario();
             Login l = new Login();
@@ -100,8 +102,16 @@ public class CadastroFuncionario {
             l.setSenha(senhaC);
             l.setUsuario(usuarioC);
             f.setLogin(l);
-            f.getCro();
-            FuncionarioC.salvar(f);
+            f.setCro(cro);
+            try{
+                FuncionarioC.salvar(f);
+                this.f.dispose();
+                JOptionPane.showMessageDialog(null, "Salvo com sucesso!");
+            }catch (Exception e)
+            {
+                JOptionPane.showMessageDialog(null, "Erro ao salvar!\n"+e.getMessage());
+            }
+
         }
     }
 }

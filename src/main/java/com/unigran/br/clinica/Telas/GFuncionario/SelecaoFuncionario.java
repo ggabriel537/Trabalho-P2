@@ -30,6 +30,7 @@ public class SelecaoFuncionario {
         f.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
         f.pack();
         f.setVisible(true);
+        atualizarFuncionarios();
         acoes();
     }
 
@@ -63,7 +64,7 @@ public class SelecaoFuncionario {
                     break;
                 }
             }
-            data[i][2] = cargo;
+            data[i][1] = cargo;
         }
         Funcionarios.setModel(new DefaultTableModel(data,colunas));
         f.pack();

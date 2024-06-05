@@ -46,6 +46,15 @@ public class EdicaoFuncionario {
         Confirmar.addActionListener(e -> {
             cadastrar();
         });
+        Permissoes.addActionListener(e -> {
+            if (Permissoes.getSelectedIndex()==1)
+            {
+                CRO.setEditable(true);
+            }else{
+                CRO.setText("");
+                CRO.setEditable(false);
+            }
+        });
     }
 
     private void configuracoes()
@@ -53,10 +62,12 @@ public class EdicaoFuncionario {
         String senha = fun.getLogin().getSenha();
         String usuario = fun.getLogin().getUsuario();
         String nome = fun.getNome();
+        int cro = fun.getCro();
         int permissao = fun.getPermissao();
         Senha.setText(senha);
         Usuario.setText(usuario);
         Nome.setText(nome);
+        CRO.setText(String.valueOf(cro));
         Permissoes.setSelectedIndex(permissao);
     }
 
@@ -64,7 +75,7 @@ public class EdicaoFuncionario {
     {
         boolean teste = false;
         String erros = "";
-        String cro = "";
+        int cro = 0;
         String nomeC = Nome.getText();
         String usuarioC = Usuario.getText();
         String senhaC = Senha.getText();
@@ -88,26 +99,34 @@ public class EdicaoFuncionario {
         if (!CRO.getText().isEmpty())
         {
             try{
-                cro = CRO.getText();
+                cro = Integer.parseInt(CRO.getText());
             }catch (Exception e)
             {
+                teste= true;
                 erros += "Digite um número válido!\n";
             }
         }
         if(teste)
         {
-            JOptionPane.showMessageDialog(null, "Campos não preenchidos\n"+erros);
+            JOptionPane.showMessageDialog(null, "Campos com erros!\n"+erros);
         }else{
             Funcionario f = new Funcionario();
             Login l = new Login();
             f.setNome(nomeC);
             f.setPermissao(permissaoC);
-            f.setCro(Integer.parseInt(cro));
+            f.setCro(cro);
             l.setPerm(permissaoC);
             l.setSenha(senhaC);
             l.setUsuario(usuarioC);
             f.setLogin(l);
-            FuncionarioC.atualizar(f, fun);
+            try{
+                FuncionarioC.atualizar(fun, f);
+                this.f.dispose();
+                JOptionPane.showMessageDialog(null, "Salvo com sucesso!");
+            }catch (Exception e)
+            {
+                JOptionPane.showMessageDialog(null, "Erro ao salvar!\n"+e.getMessage());
+            }
         }
     }
 }

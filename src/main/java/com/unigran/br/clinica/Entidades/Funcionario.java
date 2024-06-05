@@ -9,7 +9,7 @@ public class Funcionario {
     private Integer id;
     @Column(length = 32, name = "nome")
     private String nome;
-    @OneToOne
+    @OneToOne(cascade = CascadeType.PERSIST)
     @JoinColumn(name = "loginID")
     private Login login;
 

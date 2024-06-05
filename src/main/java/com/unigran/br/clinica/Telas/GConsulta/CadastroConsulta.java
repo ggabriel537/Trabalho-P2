@@ -5,7 +5,7 @@ import com.unigran.br.clinica.Controller.ConsultaC;
 import com.unigran.br.clinica.Controller.DentistaC;
 import com.unigran.br.clinica.Controller.PacienteC;
 import com.unigran.br.clinica.Entidades.Consulta;
-import com.unigran.br.clinica.Entidades.Dentista;
+import com.unigran.br.clinica.Entidades.Funcionario;
 import com.unigran.br.clinica.Entidades.Paciente;
 
 import javax.swing.*;
@@ -96,10 +96,10 @@ public class CadastroConsulta {
         }
     }
 
-    private Dentista getDentista(String nome)
+    private Funcionario getDentista(String nome)
     {
-        List<Dentista> lista = DentistaC.listar();
-        for (Dentista d : lista)
+        List<Funcionario> lista = DentistaC.listar();
+        for (Funcionario d : lista)
         {
             if (d.getNome().equals(nome))
             {

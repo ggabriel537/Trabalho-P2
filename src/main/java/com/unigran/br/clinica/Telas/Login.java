@@ -17,6 +17,7 @@ public class Login {
     private JButton Confirmar;
     private JButton Sair;
     private JFrame f;
+    private List<com.unigran.br.clinica.Entidades.Login> logins;
 
     public Login() {
         f = new JFrame("Login");
@@ -24,6 +25,7 @@ public class Login {
         f.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         f.pack();
         f.setVisible(true);
+        logins = LoginC.listar();
         acoes();
     }
 
@@ -36,19 +38,20 @@ public class Login {
             boolean teste = false;
             String usuario = User.getText();
             String senha = Senha.getText();
-            List<com.unigran.br.clinica.Entidades.Login> logins = LoginC.listar();
-
             for (com.unigran.br.clinica.Entidades.Login l : logins)
             {
                 if (l.getUsuario().equals(usuario) && l.getSenha().equals(senha))
                 {
                     teste = true;
                     new Principal(l.getPerm());
+                    f.dispose();
                     break;
                 }
             }
             if (!teste)
             {
+                Senha.setText("");
+                logins = LoginC.listar();
                 JOptionPane.showMessageDialog(null, "Login inválido!");
             }
         });
