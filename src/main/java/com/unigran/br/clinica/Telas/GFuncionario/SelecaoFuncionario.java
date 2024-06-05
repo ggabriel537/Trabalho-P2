@@ -43,19 +43,19 @@ public class SelecaoFuncionario {
             String cargo;
             switch (listafuncionario.get(i).getPermissao())
             {
-                case 1:{
+                case 0:{
                     cargo = "Recepcionista";
                     break;
                 }
-                case 2:{
+                case 1:{
                     cargo = "Médico";
                     break;
                 }
-                case 3:{
+                case 2:{
                     cargo = "Gerente";
                     break;
                 }
-                case 4:{
+                case 3:{
                     cargo = "Admin";
                     break;
                 }
