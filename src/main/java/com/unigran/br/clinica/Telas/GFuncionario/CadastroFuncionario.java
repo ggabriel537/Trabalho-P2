@@ -1,5 +1,9 @@
 package com.unigran.br.clinica.Telas.GFuncionario;
 
+import com.unigran.br.clinica.Controller.FuncionarioC;
+import com.unigran.br.clinica.Entidades.Funcionario;
+import com.unigran.br.clinica.Entidades.Login;
+
 import javax.swing.*;
 
 public class CadastroFuncionario {
@@ -34,5 +38,49 @@ public class CadastroFuncionario {
         Sair.addActionListener(e -> {
             f.dispose();
         });
+        Confirmar.addActionListener(e -> {
+            cadastrar();
+        });
+    }
+
+    private void cadastrar()
+    {
+        boolean teste = false;
+        String erros = "";
+        String nomeC = Nome.getText();
+        String usuarioC = Usuario.getText();
+        String senhaC = Senha.getText();
+        int permissaoC = Permissoes.getSelectedIndex();
+
+        if (nomeC.isEmpty())
+        {
+            teste = true;
+            erros += "Digite um nome!\n";
+        }
+        if (usuarioC.isEmpty())
+        {
+            teste = true;
+            erros += "Digite um usuário!\n";
+        }
+        if (senhaC.isEmpty())
+        {
+            teste = true;
+            erros += "Digite uma senha!\n";
+        }
+
+        if(teste)
+        {
+            JOptionPane.showMessageDialog(null, "Campos não preenchidos\n"+erros);
+        }else{
+            Funcionario f = new Funcionario();
+            Login l = new Login();
+            f.setNome(nomeC);
+            f.setPermissao(permissaoC);
+            l.setPerm(permissaoC);
+            l.setSenha(senhaC);
+            l.setUsuario(usuarioC);
+            f.setLogin(l);
+            FuncionarioC.salvar(f);
+        }
     }
 }

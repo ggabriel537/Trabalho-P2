@@ -77,7 +77,7 @@
               <columns value="16"/>
             </properties>
           </component>
-          <component id="aca91" class="javax.swing.JComboBox" binding="Permissao">
+          <component id="aca91" class="javax.swing.JComboBox" binding="Permissoes">
             <constraints>
               <grid row="7" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
               <gridbag weightx="0.0" weighty="0.0"/>

@@ -94,7 +94,7 @@ public class EdicaoConsulta {
         }
         if (teste)
         {
-            JOptionPane.showMessageDialog(null, "Campos não preenchidos\n");
+            JOptionPane.showMessageDialog(null, "Campos não preenchidos\n"+erros);
         }else{
             Consulta c = new Consulta();
             c.setStatus(consulta.getStatus());

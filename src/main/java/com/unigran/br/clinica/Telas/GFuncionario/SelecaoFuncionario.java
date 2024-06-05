@@ -3,6 +3,7 @@ package com.unigran.br.clinica.Telas.GFuncionario;
 import com.unigran.br.clinica.Controller.ConsultaC;
 import com.unigran.br.clinica.Controller.FuncionarioC;
 import com.unigran.br.clinica.Entidades.Funcionario;
+import com.unigran.br.clinica.Telas.GConsulta.EdicaoConsulta;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
@@ -73,5 +74,16 @@ public class SelecaoFuncionario {
         Sair.addActionListener(e -> {
             f.dispose();
         });
+        if (chamarEditor)
+        {
+            Confirmar.addActionListener(e ->{
+                if (Funcionarios.getSelectedRow()==-1)
+                {
+                    JOptionPane.showMessageDialog(null, "Selecione um item!");
+                }else{
+                    new EdicaoFuncionario(listafuncionario.get(Funcionarios.getSelectedRow()));
+                }
+            });
+        }
     }
 }
