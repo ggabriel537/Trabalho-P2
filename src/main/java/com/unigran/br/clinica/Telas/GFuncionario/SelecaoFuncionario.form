@@ -28,13 +28,13 @@
           <component id="eaa8c" class="javax.swing.JButton" binding="Confirmar">
             <constraints/>
             <properties>
-              <text value="Button"/>
+              <text value="Confirmar"/>
             </properties>
           </component>
           <component id="50df4" class="javax.swing.JButton" binding="Sair">
             <constraints/>
             <properties>
-              <text value="Button"/>
+              <text value="Sair"/>
             </properties>
           </component>
         </children>
