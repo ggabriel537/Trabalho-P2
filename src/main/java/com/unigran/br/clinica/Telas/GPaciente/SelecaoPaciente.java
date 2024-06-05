@@ -2,7 +2,9 @@ package com.unigran.br.clinica.Telas.GPaciente;
 
 import com.unigran.br.clinica.Controller.MaterialC;
 import com.unigran.br.clinica.Controller.PacienteC;
+import com.unigran.br.clinica.Entidades.Funcionario;
 import com.unigran.br.clinica.Entidades.Paciente;
+import com.unigran.br.clinica.Telas.GFuncionario.EdicaoFuncionario;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
@@ -44,10 +46,33 @@ public class SelecaoPaciente {
         f.pack();
     }
 
-    private void acoes()
+    private Paciente acoes()
     {
         Sair.addActionListener(e -> {
             f.dispose();
         });
+        if (chamarEditor)
+        {
+            Confirmar.addActionListener(e ->{
+                if (Pacientes.getSelectedRow()==-1)
+                {
+                    JOptionPane.showMessageDialog(null, "Selecione um item!");
+                }else{
+                    new EdicaoPaciente(listapacientes.get(Pacientes.getSelectedRow()));
+                }
+            });
+        }else{
+            final Paciente[] retorno = {null};
+            Confirmar.addActionListener(e -> {
+                if (Pacientes.getSelectedRow()==-1)
+                {
+
+                }else{
+                    retorno[0] = listapacientes.get(Pacientes.getSelectedRow());
+                }
+            });
+            return retorno[0];
+        }
+        return null;
     }
 }
