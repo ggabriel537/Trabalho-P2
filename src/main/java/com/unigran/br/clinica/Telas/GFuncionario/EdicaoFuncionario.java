@@ -120,7 +120,7 @@ public class EdicaoFuncionario {
             l.setUsuario(usuarioC);
             f.setLogin(l);
             try{
-                FuncionarioC.atualizar(fun, f);
+                FuncionarioC.atualizar(f, fun);
                 this.f.dispose();
                 JOptionPane.showMessageDialog(null, "Salvo com sucesso!");
             }catch (Exception e)
