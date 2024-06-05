@@ -17,7 +17,7 @@ public class Consulta {
 
     @OneToOne
     @JoinColumn(name = "dentistaID")
-    private Dentista dentista;
+    private Funcionario dentista;
 
     @Column(length = 512, name = "observacoes")
     private String observacoes;
@@ -47,11 +47,11 @@ public class Consulta {
         this.paciente = paciente;
     }
 
-    public Dentista getDentista() {
+    public Funcionario getDentista() {
         return dentista;
     }
 
-    public void setDentista(Dentista dentista) {
+    public void setDentista(Funcionario dentista) {
         this.dentista = dentista;
     }
 

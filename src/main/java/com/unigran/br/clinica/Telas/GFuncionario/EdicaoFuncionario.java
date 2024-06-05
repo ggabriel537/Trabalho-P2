@@ -22,6 +22,8 @@ public class EdicaoFuncionario {
     private JLabel UserL;
     private JLabel SenhaL;
     private JLabel PermissaoL;
+    private JLabel CROL;
+    private JTextField CRO;
     private JFrame f;
     private Funcionario fun;
 
@@ -62,6 +64,7 @@ public class EdicaoFuncionario {
     {
         boolean teste = false;
         String erros = "";
+        String cro = "";
         String nomeC = Nome.getText();
         String usuarioC = Usuario.getText();
         String senhaC = Senha.getText();
@@ -82,7 +85,15 @@ public class EdicaoFuncionario {
             teste = true;
             erros += "Digite uma senha!\n";
         }
-
+        if (!CRO.getText().isEmpty())
+        {
+            try{
+                cro = CRO.getText();
+            }catch (Exception e)
+            {
+                erros += "Digite um número válido!\n";
+            }
+        }
         if(teste)
         {
             JOptionPane.showMessageDialog(null, "Campos não preenchidos\n"+erros);
@@ -91,6 +102,7 @@ public class EdicaoFuncionario {
             Login l = new Login();
             f.setNome(nomeC);
             f.setPermissao(permissaoC);
+            f.setCro(Integer.parseInt(cro));
             l.setPerm(permissaoC);
             l.setSenha(senhaC);
             l.setUsuario(usuarioC);

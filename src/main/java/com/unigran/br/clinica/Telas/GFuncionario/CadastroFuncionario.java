@@ -22,6 +22,8 @@ public class CadastroFuncionario {
     private JLabel UsuarioL;
     private JLabel SenhaL;
     private JLabel PermissaoL;
+    private JLabel CROL;
+    private JTextField CRO;
     private JFrame f;
 
     public CadastroFuncionario() {
@@ -29,6 +31,7 @@ public class CadastroFuncionario {
         f.setContentPane(PainelPrincipal);
         f.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
         f.pack();
+        CRO.setEditable(false);
         f.setVisible(true);
         acoes();
     }
@@ -41,12 +44,21 @@ public class CadastroFuncionario {
         Confirmar.addActionListener(e -> {
             cadastrar();
         });
+        Permissoes.addActionListener(e -> {
+            if (Permissoes.getSelectedIndex()==2)
+            {
+                CRO.setEditable(true);
+            }else{
+                CRO.setEditable(false);
+            }
+        });
     }
 
     private void cadastrar()
     {
         boolean teste = false;
         String erros = "";
+        String cro;
         String nomeC = Nome.getText();
         String usuarioC = Usuario.getText();
         String senhaC = Senha.getText();
@@ -67,7 +79,15 @@ public class CadastroFuncionario {
             teste = true;
             erros += "Digite uma senha!\n";
         }
-
+        if (!CRO.getText().isEmpty())
+        {
+            try{
+                cro = CRO.getText();
+            }catch (Exception e)
+            {
+                erros += "Digite um número válido!\n";
+            }
+        }
         if(teste)
         {
             JOptionPane.showMessageDialog(null, "Campos não preenchidos\n"+erros);
@@ -80,7 +100,7 @@ public class CadastroFuncionario {
             l.setSenha(senhaC);
             l.setUsuario(usuarioC);
             f.setLogin(l);
-            f.getCro()asdasd;
+            f.getCro();
             FuncionarioC.salvar(f);
         }
     }
