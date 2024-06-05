@@ -3,6 +3,7 @@ package com.unigran.br.clinica.Telas.GMaterial;
 import com.unigran.br.clinica.Controller.FuncionarioC;
 import com.unigran.br.clinica.Controller.MaterialC;
 import com.unigran.br.clinica.Entidades.Material;
+import com.unigran.br.clinica.Telas.GFuncionario.EdicaoFuncionario;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
@@ -29,6 +30,7 @@ public class SelecaoMaterial {
         f.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
         f.pack();
         f.setVisible(true);
+        atualizarMaterial();
         acoes();
     }
 
@@ -49,5 +51,16 @@ public class SelecaoMaterial {
         Sair.addActionListener(e -> {
             f.dispose();
         });
+        if (chamarEditor)
+        {
+            Confirmar.addActionListener(e ->{
+                if (Materiais.getSelectedRow()==-1)
+                {
+                    JOptionPane.showMessageDialog(null, "Selecione um item!");
+                }else{
+                    new EdicaoMaterial(listamaterial.get(Materiais.getSelectedRow()));
+                }
+            });
+        }
     }
 }
