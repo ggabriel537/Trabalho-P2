@@ -72,7 +72,7 @@ public class ProntuarioTela {
         Selecionar.addActionListener(e -> {
             if (Dados.getSelectedRow()!=-1)
             {
-                new EdicaoConsulta();
+                new EdicaoConsulta(null); //alterar
             }
         });
     }

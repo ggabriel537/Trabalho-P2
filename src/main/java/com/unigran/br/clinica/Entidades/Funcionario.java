@@ -16,6 +16,17 @@ public class Funcionario {
     @Column(name = "permissao")
     private int permissao;
 
+    @Column(name = "cro")
+    private int cro;
+
+    public int getCro() {
+        return cro;
+    }
+
+    public void setCro(int cro) {
+        this.cro = cro;
+    }
+
     public Integer getId() {
         return id;
     }

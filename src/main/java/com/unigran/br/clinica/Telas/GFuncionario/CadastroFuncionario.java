@@ -80,6 +80,7 @@ public class CadastroFuncionario {
             l.setSenha(senhaC);
             l.setUsuario(usuarioC);
             f.setLogin(l);
+            f.getCro()asdasd;
             FuncionarioC.salvar(f);
         }
     }
