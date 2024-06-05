@@ -1,6 +1,7 @@
 package com.unigran.br.clinica.Telas;
 
 import com.unigran.br.clinica.Controller.LoginC;
+import com.unigran.br.clinica.Telas.GFuncionario.CadastroFuncionario;
 
 import javax.swing.*;
 import java.util.List;
@@ -26,7 +27,18 @@ public class Login {
         f.pack();
         f.setVisible(true);
         logins = LoginC.listar();
+        if (logins.size()==0)
+        {
+            primeiroLogin();
+        }
         acoes();
+    }
+
+    private void primeiroLogin()
+    {
+        new CadastroFuncionario(true);
+        //adicionar thread para atualizar lista de logins após fechar janela
+        logins = LoginC.listar();
     }
 
     private void acoes()

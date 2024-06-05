@@ -25,6 +25,7 @@ public class CadastroFuncionario {
     private JLabel CROL;
     private JTextField CRO;
     private JFrame f;
+    private boolean primeirologin = false;
 
     public CadastroFuncionario() {
         f = new JFrame("Cadastro de Funcionário");
@@ -33,6 +34,25 @@ public class CadastroFuncionario {
         f.pack();
         CRO.setEditable(false);
         f.setVisible(true);
+        acoes();
+    }
+
+    public CadastroFuncionario(boolean primeirologin) {
+        this.primeirologin = primeirologin;
+        f = new JFrame("Cadastro de Funcionário");
+        f.setContentPane(PainelPrincipal);
+        f.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
+        CRO.setEditable(false);
+        f.setVisible(true);
+        if (primeirologin)
+        {
+            CadastroL.setText("Cadastro de administrador");
+            Permissoes.setVisible(false);
+            CRO.setVisible(false);
+            CROL.setVisible(false);
+            PermissaoL.setVisible(false);
+        }
+        f.pack();
         acoes();
     }
 
@@ -97,7 +117,12 @@ public class CadastroFuncionario {
             Funcionario f = new Funcionario();
             Login l = new Login();
             f.setNome(nomeC);
-            f.setPermissao(permissaoC);
+            if (primeirologin)
+            {
+                f.setPermissao(4);
+            }else{
+                f.setPermissao(permissaoC);
+            }
             l.setPerm(permissaoC);
             l.setSenha(senhaC);
             l.setUsuario(usuarioC);
