@@ -7,11 +7,15 @@ import com.unigran.br.clinica.Controller.PacienteC;
 import com.unigran.br.clinica.Entidades.Consulta;
 import com.unigran.br.clinica.Entidades.Funcionario;
 import com.unigran.br.clinica.Entidades.Paciente;
+import com.unigran.br.clinica.Telas.GFuncionario.SelecaoFuncionario;
+import com.unigran.br.clinica.Telas.GPaciente.SelecaoPaciente;
 
 import javax.swing.*;
 import java.awt.*;
 import java.util.Date;
 import java.util.List;
+import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.atomic.AtomicReference;
 
 public class CadastroConsulta {
     private JPanel PainelPrincipal;
@@ -53,17 +57,26 @@ public class CadastroConsulta {
         acoes();
     }
 
-    private void acoes()
-    {
+    private void acoes() {
         Sair.addActionListener(e -> {
             f.dispose();
         });
         Confirmar.addActionListener(e -> {
             cadastrar();
         });
+        SelecionarP.addActionListener(e -> {
+            SelecaoPaciente sp = new SelecaoPaciente(false);
+            Paciente p = sp.getPaciente();
+
+            Paciente.setText(p.getNome());
+        });
+
+        SelecionarD.addActionListener(e -> {
+
+        });
     }
 
-    private void cadastrar()
+        private void cadastrar()
     {
         String observacoes = Observacao.getText();
         String anexos = Anexos.getText();

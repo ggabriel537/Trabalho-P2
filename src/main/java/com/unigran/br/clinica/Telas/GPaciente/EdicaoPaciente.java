@@ -1,5 +1,7 @@
 package com.unigran.br.clinica.Telas.GPaciente;
 
+import com.unigran.br.clinica.Entidades.Paciente;
+
 import javax.swing.*;
 
 public class EdicaoPaciente {
@@ -29,8 +31,10 @@ public class EdicaoPaciente {
     private JLabel Con2L;
     private JLabel ResponsavelL;
     private JFrame f;
+    private Paciente pac;
 
-    public EdicaoPaciente() {
+    public EdicaoPaciente(Paciente pac) {
+        this.pac = pac;
         f = new JFrame("Edição de Paciente");
         f.setContentPane(PainelPrincipal);
         f.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);

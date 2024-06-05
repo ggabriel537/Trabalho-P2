@@ -23,8 +23,10 @@ public class SelecaoPaciente {
     private JFrame f;
     private boolean chamarEditor;
     private List<Paciente> listapacientes;
+    private Paciente selecionadoP;
 
     public SelecaoPaciente(boolean chamarEditor) {
+        selecionadoP = null;
         this.chamarEditor = chamarEditor;
         f = new JFrame("Pesquisa de Paciente");
         f.setContentPane(PainelPrincipal);
@@ -45,8 +47,7 @@ public class SelecaoPaciente {
         Pacientes.setModel(new DefaultTableModel(data,colunas));
         f.pack();
     }
-
-    private Paciente acoes()
+    private void acoes()
     {
         Sair.addActionListener(e -> {
             f.dispose();
@@ -62,17 +63,20 @@ public class SelecaoPaciente {
                 }
             });
         }else{
-            final Paciente[] retorno = {null};
             Confirmar.addActionListener(e -> {
                 if (Pacientes.getSelectedRow()==-1)
                 {
-
+                    JOptionPane.showMessageDialog(null, "Selecione um item!");
                 }else{
-                    retorno[0] = listapacientes.get(Pacientes.getSelectedRow());
+                    selecionadoP = listapacientes.get(Pacientes.getSelectedRow());
+                    f.dispose();
                 }
             });
-            return retorno[0];
         }
-        return null;
+    }
+
+    public Paciente getPaciente()
+    {
+        return selecionadoP;
     }
 }

@@ -2,6 +2,7 @@ package com.unigran.br.clinica.Telas.GFuncionario;
 
 import com.unigran.br.clinica.Controller.FuncionarioC;
 import com.unigran.br.clinica.Entidades.Funcionario;
+import com.unigran.br.clinica.Entidades.Paciente;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
@@ -20,8 +21,10 @@ public class SelecaoFuncionario {
     private JFrame f;
     private boolean chamarEditor;
     private List<Funcionario> listafuncionario;
+    private Funcionario selecionadoD;
 
     public SelecaoFuncionario(boolean chamarEditor) {
+        selecionadoD = null;
         this.chamarEditor = chamarEditor;
         f = new JFrame("Seleção de Funcionário");
         f.setContentPane(PainelPrincipal);
@@ -68,7 +71,7 @@ public class SelecaoFuncionario {
         f.pack();
     }
 
-    private Funcionario acoes()
+    private void acoes()
     {
         Sair.addActionListener(e -> {
             f.dispose();
@@ -84,17 +87,19 @@ public class SelecaoFuncionario {
                 }
             });
         }else{
-            final Funcionario[] retorno = {null};
             Confirmar.addActionListener(e -> {
                 if (Funcionarios.getSelectedRow()==-1)
                 {
-
+                    JOptionPane.showMessageDialog(null, "Selecione um item!");
                 }else{
-                    retorno[0] =  listafuncionario.get(Funcionarios.getSelectedRow());
+                    selecionadoD = listafuncionario.get(Funcionarios.getSelectedRow());
+                    f.dispose();
                 }
             });
-            return retorno[0];
         }
-        return null;
+    }
+    public Funcionario getFuncionario()
+    {
+        return selecionadoD;
     }
 }
