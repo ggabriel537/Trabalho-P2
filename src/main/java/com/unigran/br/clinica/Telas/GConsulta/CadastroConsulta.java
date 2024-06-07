@@ -81,9 +81,12 @@ public class CadastroConsulta {
             try{
                 if (sp!=null)
                 {
-                    p = sp.getPaciente();
-                    SelecionarP.setText(p.getNome());
-                    f.pack();
+                    if (sp.getPaciente()!=null)
+                    {
+                        p = sp.getPaciente();
+                        SelecionarP.setText(p.getNome());
+                        f.pack();
+                    }
                 }
             }catch (NullPointerException ex)
             {
@@ -93,9 +96,12 @@ public class CadastroConsulta {
             try{
                 if (sd!=null)
                 {
-                    d = sd.getFuncionario();
-                    Dentista.setText(d.getNome());
-                    f.pack();
+                    if (sd.getFuncionario()!=null)
+                    {
+                        d = sd.getFuncionario();
+                        Dentista.setText(d.getNome());
+                        f.pack();
+                    }
                 }
             }catch (NullPointerException ex)
             {

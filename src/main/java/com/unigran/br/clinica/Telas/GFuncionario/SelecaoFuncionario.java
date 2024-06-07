@@ -29,9 +29,9 @@ public class SelecaoFuncionario {
         f = new JFrame("Seleção de Funcionário");
         f.setContentPane(PainelPrincipal);
         f.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
+        atualizarFuncionarios();
         f.pack();
         f.setVisible(true);
-        atualizarFuncionarios();
         acoes();
     }
 
@@ -68,7 +68,6 @@ public class SelecaoFuncionario {
             data[i][1] = cargo;
         }
         Funcionarios.setModel(new DefaultTableModel(data,colunas));
-        f.pack();
     }
 
     private void acoes()

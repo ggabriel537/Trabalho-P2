@@ -27,6 +27,7 @@ public class SelecaoPaciente {
 
     public SelecaoPaciente(boolean chamarEditor) {
         selecionadoP = null;
+        atualizarPacientes();
         this.chamarEditor = chamarEditor;
         f = new JFrame("Pesquisa de Paciente");
         f.setContentPane(PainelPrincipal);
@@ -45,7 +46,6 @@ public class SelecaoPaciente {
             data[i][1] = listapacientes.get(i).getConvenio();
         }
         Pacientes.setModel(new DefaultTableModel(data,colunas));
-        f.pack();
     }
     private void acoes()
     {
