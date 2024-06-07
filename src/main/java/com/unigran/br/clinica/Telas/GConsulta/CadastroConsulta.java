@@ -14,8 +14,6 @@ import javax.swing.*;
 import java.awt.*;
 import java.util.Date;
 import java.util.List;
-import java.util.concurrent.CountDownLatch;
-import java.util.concurrent.atomic.AtomicReference;
 
 public class CadastroConsulta {
     private JPanel PainelPrincipal;
@@ -41,10 +39,19 @@ public class CadastroConsulta {
     private JLabel DataL;
     private JPanel DataP;
     private JFormattedTextField Valor;
+    private JButton Atualizar;
     private JFrame f;
     private JDateChooser data;
+    private Funcionario d;
+    private Paciente p;
+    private SelecaoFuncionario sd;
+    private SelecaoPaciente sp;
 
     public CadastroConsulta() {
+        this.p = null;
+        this.d = null;
+        this.sd = null;
+        this.sp = null;
         f = new JFrame("Cadastro de Consulta");
         f.setContentPane(PainelPrincipal);
         f.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
@@ -65,13 +72,35 @@ public class CadastroConsulta {
             cadastrar();
         });
         SelecionarP.addActionListener(e -> {
-            SelecaoPaciente sp = new SelecaoPaciente(false);
-            Paciente p = sp.getPaciente();
-
-            Paciente.setText(p.getNome());
+            sp = new SelecaoPaciente(false);
         });
-
         SelecionarD.addActionListener(e -> {
+            sd = new SelecaoFuncionario(false);
+        });
+        Atualizar.addActionListener(e -> {
+            try{
+                if (sp!=null)
+                {
+                    p = sp.getPaciente();
+                    SelecionarP.setText(p.getNome());
+                    f.pack();
+                }
+            }catch (NullPointerException ex)
+            {
+                System.err.println("Selecione paciente");
+            }
+
+            try{
+                if (sd!=null)
+                {
+                    d = sd.getFuncionario();
+                    Dentista.setText(d.getNome());
+                    f.pack();
+                }
+            }catch (NullPointerException ex)
+            {
+                System.err.println("Selecione dentista");
+            }
 
         });
     }

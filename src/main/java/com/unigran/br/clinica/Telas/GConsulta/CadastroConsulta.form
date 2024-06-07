@@ -37,6 +37,12 @@
               <text value="Sair"/>
             </properties>
           </component>
+          <component id="c3f2c" class="javax.swing.JButton" binding="Atualizar">
+            <constraints/>
+            <properties>
+              <text value="Atualizar Campos"/>
+            </properties>
+          </component>
         </children>
       </grid>
       <grid id="d3469" binding="Campos" layout-manager="GridBagLayout">
