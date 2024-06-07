@@ -38,6 +38,12 @@
               <text value="Sair"/>
             </properties>
           </component>
+          <component id="760b1" class="javax.swing.JButton" binding="Atualizar">
+            <constraints/>
+            <properties>
+              <text value="Atualizar Logins"/>
+            </properties>
+          </component>
         </children>
       </grid>
       <grid id="4a817" binding="Botoes" layout-manager="GridBagLayout">

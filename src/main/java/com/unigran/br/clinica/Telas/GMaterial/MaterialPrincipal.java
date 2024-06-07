@@ -1,5 +1,8 @@
 package com.unigran.br.clinica.Telas.GMaterial;
 
+import com.unigran.br.clinica.Telas.GConsulta.CadastroConsulta;
+import com.unigran.br.clinica.Telas.GConsulta.SelecaoConsulta;
+
 import javax.swing.*;
 
 public class MaterialPrincipal {
@@ -22,10 +25,15 @@ public class MaterialPrincipal {
         acoes();
     }
 
-    private void acoes()
-    {
+    private void acoes() {
         Sair.addActionListener(e -> {
             f.dispose();
+        });
+        Cadastrar.addActionListener(e -> {
+            new CadastroMaterial();
+        });
+        Editar.addActionListener(e -> {
+            new SelecaoMaterial(true);
         });
     }
 }

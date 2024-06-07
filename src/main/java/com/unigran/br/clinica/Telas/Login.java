@@ -1,6 +1,10 @@
 package com.unigran.br.clinica.Telas;
 
+import com.unigran.br.clinica.Controller.LoginC;
+import com.unigran.br.clinica.Telas.GFuncionario.CadastroFuncionario;
+
 import javax.swing.*;
+import java.util.List;
 
 public class Login {
     private JPanel PainelPrincipal;
@@ -13,7 +17,9 @@ public class Login {
     private JLabel SenhaL;
     private JButton Confirmar;
     private JButton Sair;
+    private JButton Atualizar;
     private JFrame f;
+    private List<com.unigran.br.clinica.Entidades.Login> logins;
 
     public Login() {
         f = new JFrame("Login");
@@ -21,13 +27,47 @@ public class Login {
         f.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         f.pack();
         f.setVisible(true);
+        logins = LoginC.listar();
+        if (logins.size()==0)
+        {
+            primeiroLogin();
+        }
         acoes();
+    }
+
+    private void primeiroLogin()
+    {
+        new CadastroFuncionario(true);
     }
 
     private void acoes()
     {
         Sair.addActionListener(e -> {
             f.dispose();
+        });
+        Confirmar.addActionListener(e -> {
+            boolean teste = false;
+            String usuario = User.getText();
+            String senha = Senha.getText();
+            for (com.unigran.br.clinica.Entidades.Login l : logins)
+            {
+                if (l.getUsuario().equals(usuario) && l.getSenha().equals(senha))
+                {
+                    teste = true;
+                    new Principal(l.getPerm());
+                    f.dispose();
+                    break;
+                }
+            }
+            if (!teste)
+            {
+                Senha.setText("");
+                logins = LoginC.listar();
+                JOptionPane.showMessageDialog(null, "Login inválido!");
+            }
+        });
+        Atualizar.addActionListener(e -> {
+            logins = LoginC.listar();
         });
     }
 }

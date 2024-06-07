@@ -7,8 +7,8 @@ public class Login {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    @Column(length = 16, name = "user")
-    private String user;
+    @Column(length = 16, name = "usuario")
+    private String usuario;
 
     @Column(length = 16, name = "senha")
     private String senha;
@@ -24,12 +24,12 @@ public class Login {
         this.perm = perm;
     }
 
-    public String getUser() {
-        return user;
+    public String getUsuario() {
+        return usuario;
     }
 
-    public void setUser(String user) {
-        this.user = user;
+    public void setUsuario(String usuario) {
+        this.usuario = usuario;
     }
 
     public String getSenha() {
