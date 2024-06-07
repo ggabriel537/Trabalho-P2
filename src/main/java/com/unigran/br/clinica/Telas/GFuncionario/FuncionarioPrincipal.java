@@ -32,9 +32,11 @@ public class FuncionarioPrincipal {
             f.dispose();
         });
         Cadastrar.addActionListener(e -> {
+            f.dispose();
             new CadastroFuncionario();
         });
         Editar.addActionListener(e -> {
+            f.dispose();
             new SelecaoFuncionario(true);
         });
     }

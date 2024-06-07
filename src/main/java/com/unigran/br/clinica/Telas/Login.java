@@ -17,6 +17,7 @@ public class Login {
     private JLabel SenhaL;
     private JButton Confirmar;
     private JButton Sair;
+    private JButton Atualizar;
     private JFrame f;
     private List<com.unigran.br.clinica.Entidades.Login> logins;
 
@@ -37,8 +38,6 @@ public class Login {
     private void primeiroLogin()
     {
         new CadastroFuncionario(true);
-        //adicionar thread para atualizar lista de logins após fechar janela
-        logins = LoginC.listar();
     }
 
     private void acoes()
@@ -66,6 +65,9 @@ public class Login {
                 logins = LoginC.listar();
                 JOptionPane.showMessageDialog(null, "Login inválido!");
             }
+        });
+        Atualizar.addActionListener(e -> {
+            logins = LoginC.listar();
         });
     }
 }

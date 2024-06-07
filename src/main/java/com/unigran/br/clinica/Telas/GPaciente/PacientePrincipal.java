@@ -31,9 +31,11 @@ public class PacientePrincipal {
             f.dispose();
         });
         Cadastrar.addActionListener(e -> {
+            f.dispose();
             new CadastroPaciente();
         });
         Editar.addActionListener(e -> {
+            f.dispose();
             new SelecaoPaciente(true);
         });
     }

@@ -56,24 +56,24 @@ public class Principal {
     {
         switch (perm)
         {
-            case 1:
+            case 0:
             {
                 GerenciamentoConsulta.setVisible(true);
                 GerenciamentoPaciente.setVisible(true);
                 break;
             }
-            case 2:
+            case 1:
             {
                 Prontuarios.setVisible(true);
                 break;
             }
-            case 3:
+            case 2:
             {
                 GerenciarFuncionario.setVisible(true);
                 GerenciarMaterial.setVisible(true);
                 break;
             }
-            case 4:
+            case 3:
             {
                 GerenciarMaterial.setVisible(true);
                 GerenciarFuncionario.setVisible(true);

@@ -119,13 +119,13 @@ public class CadastroFuncionario {
             f.setNome(nomeC);
             if (primeirologin)
             {
-                f.setPermissao(4);
+                f.setPermissao(3);
             }else{
                 f.setPermissao(permissaoC);
             }
-            l.setPerm(permissaoC);
             l.setSenha(senhaC);
             l.setUsuario(usuarioC);
+            l.setPerm(f.getPermissao());
             f.setLogin(l);
             f.setCro(cro);
             try{
