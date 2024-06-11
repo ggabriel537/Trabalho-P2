@@ -9,7 +9,6 @@
     <class>com.unigran.br.clinica.Entidades.Login</class>
     <class>com.unigran.br.clinica.Entidades.Material</class>
     <class>com.unigran.br.clinica.Entidades.Paciente</class>
-    <class>com.unigran.br.clinica.Entidades.Prontuario</class>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/postgres"/>
       <property name="javax.persistence.jdbc.user" value="postgres"/>
