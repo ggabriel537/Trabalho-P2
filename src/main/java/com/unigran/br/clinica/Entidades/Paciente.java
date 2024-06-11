@@ -17,7 +17,7 @@ public class Paciente {
     private String endereco;
     @Column(length = 64, name = "convenio")
     private String convenio;
-    @OneToOne
+    @OneToOne(cascade = CascadeType.PERSIST)
     @JoinColumn(name = "contatoID")
     private Contato contato;
     @Column(length = 32, name = "responsavel")

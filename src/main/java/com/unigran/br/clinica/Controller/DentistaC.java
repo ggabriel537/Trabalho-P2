@@ -7,6 +7,6 @@ import java.util.List;
 
 public class DentistaC extends Funcionario {
     public static List<Funcionario> listar() {
-        return Dao.listar("select * from funcionario f where permissao = 2", Funcionario.class);
+        return Dao.listar("select * from funcionario f where permissao = 1", Funcionario.class);
     }
 }

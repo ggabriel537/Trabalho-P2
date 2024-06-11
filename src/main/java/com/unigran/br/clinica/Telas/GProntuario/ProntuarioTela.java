@@ -1,8 +1,8 @@
 package com.unigran.br.clinica.Telas.GProntuario;
 
-import com.unigran.br.clinica.Controller.PacienteC;
-import com.unigran.br.clinica.Controller.ProntuarioC;
-import com.unigran.br.clinica.Entidades.Prontuario;
+import com.unigran.br.clinica.Controller.ConsultaC;
+import com.unigran.br.clinica.Entidades.Consulta;
+import com.unigran.br.clinica.Entidades.Paciente;
 import com.unigran.br.clinica.Telas.GConsulta.EdicaoConsulta;
 
 import javax.swing.*;
@@ -19,30 +19,29 @@ public class ProntuarioTela {
     private JLabel ProntuarioL;
     private JButton Sair;
     private JButton Selecionar;
-    private Prontuario p;
+    private Paciente p;
     private JFrame f;
-    private List<Prontuario> listaprontuarios;
-    public ProntuarioTela(Prontuario p) {
+    private List<Consulta> listaconsulta;
+    public ProntuarioTela(Paciente p) {
         this.p = p;
         f = new JFrame("Prontuario do Paciente");
         f.setContentPane(PainelPrincipal);
         f.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
+        atualizarProntuarios();
         f.pack();
         f.setVisible(true);
         acoes();
     }
 
     public void atualizarProntuarios(){
-        this.listaprontuarios = ProntuarioC.listar();
-        String[] colunas = new String[]{"Nome", "Convenio"};
-        Object[][] data = new Object[listaprontuarios.size()][colunas.length];
-        for (int i = 0; i < listaprontuarios.size(); i++) {
-            for (int j = 0; j < listaprontuarios.get(i).getHistorico().size();j++)
-            {
-                data[i][0] = listaprontuarios.get(i).getPaciente().getNome();
-                data[i][1] = listaprontuarios.get(i).getHistorico().get(j).getObservacoes();
+        this.listaconsulta = ConsultaC.listar(p.getCpf());
+        String[] colunas = new String[]{"Nome", "Observações", "Status"};
+        Object[][] data = new Object[listaconsulta.size()][colunas.length];
+        for (int i = 0; i < listaconsulta.size(); i++) {
+                data[i][0] = listaconsulta.get(i).getPaciente().getNome();
+                data[i][1] = listaconsulta.get(i).getObservacoes();
                 String status;
-                switch (listaprontuarios.get(i).getHistorico().get(j).getStatus())
+                switch (listaconsulta.get(i).getStatus())
                 {
                     case 1:{
                         status = "Agendado";
@@ -58,7 +57,6 @@ public class ProntuarioTela {
                     }
                 }
                 data[i][2] = status;
-            }
         }
         Dados.setModel(new DefaultTableModel(data,colunas));
         f.pack();
@@ -72,8 +70,7 @@ public class ProntuarioTela {
         Selecionar.addActionListener(e -> {
             if (Dados.getSelectedRow()!=-1)
             {
-                f.dispose();
-                new EdicaoConsulta(null); //alterar
+                new EdicaoConsulta(listaconsulta.get(Dados.getSelectedRow()));
             }
         });
     }

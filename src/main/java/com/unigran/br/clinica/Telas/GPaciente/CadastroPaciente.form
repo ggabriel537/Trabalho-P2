@@ -77,6 +77,12 @@
               <vspacer id="e5be1">
                 <constraints border-constraint="South"/>
               </vspacer>
+              <grid id="d5928" binding="DataP" layout-manager="BorderLayout" hgap="0" vgap="0">
+                <constraints border-constraint="Center"/>
+                <properties/>
+                <border type="none"/>
+                <children/>
+              </grid>
             </children>
           </grid>
           <component id="8a3f3" class="javax.swing.JTextField" binding="Endereco">

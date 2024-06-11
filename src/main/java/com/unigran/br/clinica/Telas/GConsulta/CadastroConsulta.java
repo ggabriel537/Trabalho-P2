@@ -10,6 +10,7 @@ import com.unigran.br.clinica.Entidades.Paciente;
 import com.unigran.br.clinica.Telas.GFuncionario.SelecaoFuncionario;
 import com.unigran.br.clinica.Telas.GPaciente.SelecaoPaciente;
 
+import javax.persistence.JoinColumn;
 import javax.swing.*;
 import java.awt.*;
 import java.util.Date;
@@ -75,7 +76,7 @@ public class CadastroConsulta {
             sp = new SelecaoPaciente(false);
         });
         SelecionarD.addActionListener(e -> {
-            sd = new SelecaoFuncionario(false);
+            sd = new SelecaoFuncionario(false, 1);
         });
         Atualizar.addActionListener(e -> {
             try{
@@ -84,7 +85,7 @@ public class CadastroConsulta {
                     if (sp.getPaciente()!=null)
                     {
                         p = sp.getPaciente();
-                        SelecionarP.setText(p.getNome());
+                        Paciente.setText(p.getNome());
                         f.pack();
                     }
                 }
@@ -140,7 +141,15 @@ public class CadastroConsulta {
             c.setPaciente(getPaciente(Paciente.getText()));
             c.setObservacoes(observacoes);
             c.setValor(valor);
-            ConsultaC.salvar(c);
+            try{
+                ConsultaC.salvar(c);
+                f.dispose();
+                JOptionPane.showMessageDialog(null, "Salva com sucesso!");
+            }catch (Exception e)
+            {
+                JOptionPane.showMessageDialog(null, "Erro!\n"+e.getMessage());
+            }
+
         }
     }
 

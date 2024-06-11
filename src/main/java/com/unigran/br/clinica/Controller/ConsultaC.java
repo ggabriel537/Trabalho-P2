@@ -17,6 +17,7 @@ public class ConsultaC {
     public static List<Consulta> listar() {
         return Dao.listar("select * from consulta c", Consulta.class);
     }
+    public static List<Consulta> listar(String cpf) { return Dao.listar("select * from consulta c where pacienteID like ('"+cpf+"')", Consulta.class); }
 
     public static void atualizar(Consulta novo, Consulta old) {
         Dao.atualiza(novo, old);

@@ -26,6 +26,7 @@ public class SelecaoConsulta {
         f = new JFrame("Seleção de Consulta");
         f.setContentPane(PainelPrincipal);
         f.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
+        atualizarConsultas();
         f.pack();
         f.setVisible(true);
         acoes();

@@ -17,8 +17,11 @@ public class PacienteC {
     public static List<Paciente> listar() {
         return Dao.listar("select * from paciente p", Paciente.class);
     }
+    public static List<Paciente> listar(String where) {
+        return Dao.listar("select * from paciente p where nome like ('%"+where+"%')", Paciente.class);
+    }
 
-    public static void atualizar(Paciente novo, Paciente old) {
-        Dao.atualiza(novo, old);
+    public static void atualizar(Paciente novo) {
+        Dao.atualizaE(novo);
     }
 }
