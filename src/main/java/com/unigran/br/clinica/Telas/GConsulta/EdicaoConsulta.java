@@ -7,6 +7,8 @@ import com.unigran.br.clinica.Controller.PacienteC;
 import com.unigran.br.clinica.Entidades.Consulta;
 import com.unigran.br.clinica.Entidades.Funcionario;
 import com.unigran.br.clinica.Entidades.Paciente;
+import com.unigran.br.clinica.Telas.GFuncionario.SelecaoFuncionario;
+import com.unigran.br.clinica.Telas.GPaciente.SelecaoPaciente;
 
 import javax.swing.*;
 import java.awt.*;
@@ -37,14 +39,20 @@ public class EdicaoConsulta {
     private JLabel DataL;
     private JPanel DataP;
     private JFormattedTextField Valor;
+    private JButton Atualizar;
     private JFrame f;
     private JDateChooser data;
     private Consulta consulta;
+    private Paciente p;
+    private SelecaoFuncionario sd;
+    private SelecaoPaciente sp;
+    private Funcionario d;
 
     public EdicaoConsulta(Consulta consulta) {
         f = new JFrame("Edição de Consulta");
         f.setContentPane(PainelPrincipal);
         f.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
+        this.consulta = consulta;
         data = new JDateChooser();
         data.setPreferredSize(new Dimension(130, 18));
         DataP.add(data);
@@ -62,6 +70,44 @@ public class EdicaoConsulta {
         });
         Confirmar.addActionListener(e -> {
             cadastrar();
+        });
+        SelecionarP.addActionListener(e -> {
+            sp = new SelecaoPaciente(false);
+        });
+        SelecionarD.addActionListener(e -> {
+            sd = new SelecaoFuncionario(false, 1);
+        });
+        Atualizar.addActionListener(e -> {
+            try{
+                if (sp!=null)
+                {
+                    if (sp.getPaciente()!=null)
+                    {
+                        p = sp.getPaciente();
+                        Paciente.setText(p.getNome());
+                        f.pack();
+                    }
+                }
+            }catch (NullPointerException ex)
+            {
+                System.err.println("Selecione paciente");
+            }
+
+            try{
+                if (sd!=null)
+                {
+                    if (sd.getFuncionario()!=null)
+                    {
+                        d = sd.getFuncionario();
+                        Dentista.setText(d.getNome());
+                        f.pack();
+                    }
+                }
+            }catch (NullPointerException ex)
+            {
+                System.err.println("Selecione dentista");
+            }
+
         });
     }
 
@@ -104,7 +150,14 @@ public class EdicaoConsulta {
             c.setPaciente(getPaciente(Paciente.getText()));
             c.setObservacoes(observacoes);
             c.setValor(valor);
-            ConsultaC.atualizar(c, consulta);
+            try{
+                ConsultaC.atualizar(c, consulta);
+                f.dispose();
+                JOptionPane.showMessageDialog(null, "Salva com sucesso!");
+            }catch (Exception e)
+            {
+                JOptionPane.showMessageDialog(null, "Erro!\n"+e.getMessage());
+            }
         }
     }
 

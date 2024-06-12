@@ -23,6 +23,11 @@ public class Dao {
         }
         etx.begin();
         em.remove(old);
+        em.persist(o);
+        etx.commit();
+    }
+    public static void atualizaE(Object o) {
+        etx.begin();
         em.merge(o);
         etx.commit();
     }

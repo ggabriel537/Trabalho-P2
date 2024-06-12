@@ -2,9 +2,7 @@ package com.unigran.br.clinica.Telas.GProntuario;
 
 import com.unigran.br.clinica.Controller.MaterialC;
 import com.unigran.br.clinica.Controller.PacienteC;
-import com.unigran.br.clinica.Controller.ProntuarioC;
 import com.unigran.br.clinica.Entidades.Paciente;
-import com.unigran.br.clinica.Entidades.Prontuario;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
@@ -30,13 +28,14 @@ public class SelecaoProntuario {
         f = new JFrame("Pesquisa de Prontuario");
         f.setContentPane(PainelPrincipal);
         f.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
+        atualizarPacientes();
         f.pack();
         f.setVisible(true);
         acoes();
     }
 
     public void atualizarPacientes(){
-        this.listapacientes = PacienteC.listar();
+        this.listapacientes = PacienteC.listar(Paciente.getText());
         String[] colunas = new String[]{"Nome", "Convenio"};
         Object[][] data = new Object[listapacientes.size()][colunas.length];
         for (int i = 0; i < listapacientes.size(); i++) {
@@ -51,6 +50,18 @@ public class SelecaoProntuario {
     {
         Sair.addActionListener(e -> {
             f.dispose();
+        });
+        Confirmar.addActionListener(e -> {
+            if (Pacientes.getSelectedRow()!=-1)
+            {
+                new ProntuarioTela(listapacientes.get(Pacientes.getSelectedRow()));
+            }else{
+                JOptionPane.showMessageDialog(null, "Selecione um paciente!");
+            }
+
+        });
+        Filtrar.addActionListener(e -> {
+            atualizarPacientes();
         });
     }
 }

@@ -32,6 +32,7 @@ public class SelecaoPaciente {
         f = new JFrame("Pesquisa de Paciente");
         f.setContentPane(PainelPrincipal);
         f.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
+        atualizarPacientes();
         f.pack();
         f.setVisible(true);
         acoes();

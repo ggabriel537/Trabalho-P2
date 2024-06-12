@@ -22,6 +22,7 @@ public class SelecaoFuncionario {
     private boolean chamarEditor;
     private List<Funcionario> listafuncionario;
     private Funcionario selecionadoD;
+    private int perm = -1;
 
     public SelecaoFuncionario(boolean chamarEditor) {
         selecionadoD = null;
@@ -34,9 +35,27 @@ public class SelecaoFuncionario {
         f.setVisible(true);
         acoes();
     }
+    public SelecaoFuncionario(boolean chamarEditor, int perm) {
+        selecionadoD = null;
+        this.perm = perm;
+        this.chamarEditor = chamarEditor;
+        f = new JFrame("Seleção de Funcionário");
+        f.setContentPane(PainelPrincipal);
+        f.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
+        atualizarFuncionarios();
+        f.pack();
+        f.setVisible(true);
+        acoes();
+    }
 
     public void atualizarFuncionarios(){
-        this.listafuncionario = FuncionarioC.listar();
+        if (perm==-1)
+        {
+            this.listafuncionario = FuncionarioC.listar();
+        }else{
+            this.listafuncionario = FuncionarioC.listar(perm);
+        }
+
         String[] colunas = new String[]{"Nome", "Cargo"};
         Object[][] data = new Object[listafuncionario.size()][colunas.length];
         for (int i = 0; i < listafuncionario.size(); i++) {

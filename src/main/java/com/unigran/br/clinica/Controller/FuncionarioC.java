@@ -17,7 +17,9 @@ public class FuncionarioC {
     public static List<Funcionario> listar() {
         return Dao.listar("select * from funcionario f", Funcionario.class);
     }
-
+    public static List<Funcionario> listar(int perm) {
+        return Dao.listar("select * from funcionario f where permissao = "+perm, Funcionario.class);
+    }
     public static void atualizar(Funcionario novo, Funcionario old) {
         Dao.atualiza(novo, old);
     }
