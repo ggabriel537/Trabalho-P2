@@ -5,6 +5,7 @@ import com.unigran.br.clinica.Telas.GFuncionario.FuncionarioPrincipal;
 import com.unigran.br.clinica.Telas.GMaterial.MaterialPrincipal;
 import com.unigran.br.clinica.Telas.GPaciente.PacientePrincipal;
 import com.unigran.br.clinica.Telas.GProntuario.SelecaoProntuario;
+import com.unigran.br.clinica.Telas.Relatorio.RelatorioPrincipal;
 
 import javax.swing.*;
 
@@ -20,6 +21,7 @@ public class Principal {
     private JButton Prontuarios;
     private JButton GerenciamentoConsulta;
     private JButton GerenciamentoPaciente;
+    private JButton Relatorios;
     private int perm;
 
     public Principal(int perm)//Utilize agora construtor para criar as telas, nao vamos mais usar o metodo main
@@ -35,6 +37,7 @@ public class Principal {
         GerenciamentoConsulta.setVisible(false);
         GerenciamentoPaciente.setVisible(false);
         Prontuarios.setVisible(false);
+        Relatorios.setVisible(false);
         Sair.setVisible(true);
 
         aplicarPerm();
@@ -46,10 +49,10 @@ public class Principal {
 
     /*
     Permissões:
-        1 - Recepcionista
-        2 - Médico
-        3 - Gerente
-        4 - Admin
+        0 - Recepcionista
+        1 - Médico
+        2 - Gerente
+        3 - Admin
     */
 
     public void aplicarPerm() //Irei colocar o sistema de permissões aqui, não mecher
@@ -71,6 +74,7 @@ public class Principal {
             {
                 GerenciarFuncionario.setVisible(true);
                 GerenciarMaterial.setVisible(true);
+                Relatorios.setVisible(true);
                 break;
             }
             case 3:
@@ -80,6 +84,7 @@ public class Principal {
                 GerenciamentoConsulta.setVisible(true);
                 GerenciamentoPaciente.setVisible(true);
                 Prontuarios.setVisible(true);
+                Relatorios.setVisible(true);
                 break;
             }
             default:
@@ -117,6 +122,9 @@ public class Principal {
         });
         Prontuarios.addActionListener(e -> {
             new SelecaoProntuario();
+        });
+        Relatorios.addActionListener(e -> {
+            new RelatorioPrincipal();
         });
         Sair.addActionListener(e -> {
             System.exit(0);

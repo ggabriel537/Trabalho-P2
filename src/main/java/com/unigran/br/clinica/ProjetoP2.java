@@ -4,9 +4,9 @@
 
 package com.unigran.br.clinica;
 
-import com.unigran.br.clinica.Telas.GConsulta.CadastroConsulta;
+import com.unigran.br.clinica.Relatorios.ConsultaR;
+import com.unigran.br.clinica.Relatorios.MaterialR;
 import com.unigran.br.clinica.Telas.Login;
-import com.unigran.br.clinica.Telas.Principal;
 
 /**
  *
