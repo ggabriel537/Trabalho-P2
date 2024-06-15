@@ -26,12 +26,12 @@ public class Login {
         f.setContentPane(PainelPrincipal);
         f.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         f.pack();
-        f.setVisible(true);
         logins = LoginC.listar();
         if (logins.size()==0)
         {
             primeiroLogin();
         }
+        f.setVisible(true);
         acoes();
     }
 
